@@ -161,9 +161,10 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
 .num{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em}
 
 /* iPhone 17 Pro mockup */
-.iphone{position:relative;aspect-ratio:437/912;width:100%;border-radius:15.5%/7.4%;padding:3.6%;background:linear-gradient(145deg,#3a3634,#1b1918 45%,#2c2927);box-shadow:inset 0 0 0 1.5px #57514d,inset 0 0 0 4px #121010,0 30px 60px -20px rgba(40,26,20,.35),0 10px 24px -12px rgba(40,26,20,.25)}
-.iphone img{width:100%;height:100%;object-fit:cover;border-radius:12.4%/5.8%;background:#fff}
-.iphone::after{content:"";position:absolute;left:50%;top:4.9%;width:28%;height:3.3%;transform:translateX(-50%);background:#0b0a0a;border-radius:99px}
+.iphone{position:relative;aspect-ratio:1000/2113;width:100%;border-radius:16.5%/7.8%;padding:2.6%;background:#141212;box-shadow:0 0 0 1.5px #8d8680,0 0 0 3px #3a3633,inset 0 0 0 1px #000,0 40px 70px -30px rgba(40,26,20,.45),0 14px 28px -16px rgba(40,26,20,.3)}
+.iphone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:14%/6.6%;background:#fff;display:block}
+.iphone::after{content:"";position:absolute;left:50%;top:3.3%;width:27%;height:3.1%;transform:translateX(-50%);background:#070606;border-radius:99px}
+.iphone::before{content:"";position:absolute;left:-3px;top:18%;width:3px;height:6%;background:#5a5450;border-radius:2px 0 0 2px;box-shadow:0 9% 0 #5a5450}
 .phone-row{display:grid;gap:clamp(14px,2.4vw,32px);align-items:start}
 .phone-row.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .phone-row.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -202,8 +203,8 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
 .sticky-comp .copy{position:sticky;top:120px;display:grid;gap:14px;align-content:start}
 .sticky-comp .copy h3{font-size:clamp(28px,3.4vw,44px);line-height:1.08}
 .sticky-comp .copy p{color:var(--ink-2);max-width:44ch}
-.home-feature{background:#E6DDD6;border-radius:22px;padding:clamp(28px,5vw,64px);display:grid;place-items:center}
-.home-feature .iphone{max-width:380px}
+.home-feature{background:#E6DDD6;border-radius:22px;padding:clamp(40px,6vw,88px) 16px;display:grid;place-items:center}
+.home-feature .iphone{width:min(300px,70vw)}
 .feat{padding-block:clamp(48px,7vw,96px);border-top:1px solid var(--line)}
 .feat .phones{display:grid;gap:clamp(14px,2.4vw,28px);grid-template-columns:repeat(2,minmax(0,1fr))}
 .feat .phones .iphone:nth-child(even){margin-top:64px}
@@ -359,22 +360,22 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
     <div class="sec-head"><h2 data-r>Projects</h2><span class="label">2025–26</span></div>
     <div class="grid">
       <a class="proj" href="#orive" data-r>
-        <div class="thumb"><img src="assets/cover-orive.jpg" alt="Orivé cover: app home screen beside the Orivé wordmark"></div>
+        <div class="thumb"><img src="cover-orive.jpg" alt="Orivé cover: app home screen beside the Orivé wordmark"></div>
         <div class="proj-meta"><h3>Orivé</h3><span class="go" aria-hidden="true">↗</span></div>
         <p class="tags">UX Case Study · UI/UX · Product Design</p>
       </a>
       <a class="proj" href="#crewcares" data-r style="--d:100ms">
-        <div class="thumb"><img src="assets/cover-crewcares.jpg" alt="CrewCares cover: a phone showing a pre-shift air-quality text"></div>
+        <div class="thumb"><img src="cover-crewcares.jpg" alt="CrewCares cover: a phone showing a pre-shift air-quality text"></div>
         <div class="proj-meta"><h3>CrewCares</h3><span class="go" aria-hidden="true">↗</span></div>
         <p class="tags">Product Design · Problem Solving</p>
       </a>
       <a class="proj" href="#ai-tarot" data-r>
-        <div class="thumb"><img src="assets/cover-tarot.jpg" alt="AI Tarot Reader interface on a purple gradient" loading="lazy"></div>
+        <div class="thumb"><img src="cover-tarot.jpg" alt="AI Tarot Reader interface on a purple gradient" loading="lazy"></div>
         <div class="proj-meta"><h3>AI Tarot Reader</h3><span class="go" aria-hidden="true">↗</span></div>
         <p class="tags">Creative Coding · HTML, JavaScript · APIs</p>
       </a>
       <a class="proj" href="#before-it-makes-sense" data-r style="--d:100ms">
-        <div class="thumb"><img src="assets/cover-bims.jpg" alt="Before It Makes Sense cover: projections on hanging fabric in a dark room" loading="lazy"></div>
+        <div class="thumb"><img src="cover-bims.jpg" alt="Before It Makes Sense cover: projections on hanging fabric in a dark room" loading="lazy"></div>
         <div class="proj-meta"><h3>Before It Makes Sense</h3><span class="go" aria-hidden="true">↗</span></div>
         <p class="tags">Experience Design · Interaction Design</p>
       </a>
@@ -432,9 +433,9 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
   </section>
 
   <div class="o-hero" data-r="img">
-    <div class="iphone" data-r="phone" style="--d:80ms"><img src="assets/o/orive-onb3.webp" alt="Onboarding screen: Understand yourself"></div>
-    <div class="iphone" data-r="phone" style="--d:160ms"><img src="assets/o/orive-home.webp" alt="Home screen with workout streak, daily stats and to-do list"></div>
-    <div class="iphone" data-r="phone" style="--d:240ms"><img src="assets/o/orive-mood.webp" alt="Daily mood check-in"></div>
+    <div class="iphone" data-r="phone" style="--d:80ms"><img src="orive-onb3.webp" alt="Onboarding screen: Understand yourself"></div>
+    <div class="iphone" data-r="phone" style="--d:160ms"><img src="orive-home.webp" alt="Home screen with workout streak, daily stats and to-do list"></div>
+    <div class="iphone" data-r="phone" style="--d:240ms"><img src="orive-mood.webp" alt="Daily mood check-in"></div>
   </div>
 
   <section class="block">
@@ -538,7 +539,7 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
     <h2 data-r style="margin-top:16px">One home for your everyday wellness.</h2>
   </section>
   <div class="home-feature" data-r="img">
-    <div class="iphone" data-r="phone"><img src="assets/o/orive-home.webp" alt="Orivé home screen" loading="lazy"></div>
+    <div class="iphone" data-r="phone"><img src="orive-home.webp" alt="Orivé home screen" loading="lazy"></div>
   </div>
   <p class="cap">Home brings the workout streak, steps, active minutes, calories and a short to-do list onto one screen.</p>
 
@@ -548,10 +549,10 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
     <div class="sticky-comp" style="margin-top:26px">
       <div class="copy" data-r><span class="label">Personalized onboarding</span><h3>Start with what matters to you.</h3><p>A short health assessment asks about goals, activity level and stress, one question at a time, so the plan fits the person.</p></div>
       <div class="phones">
-        <div class="iphone" data-r="phone"><img src="assets/o/orive-goal.webp" alt="Assessment question: What is your primary wellness goal?" loading="lazy"></div>
-        <div class="iphone" data-r="phone" style="--d:100ms"><img src="assets/o/orive-active.webp" alt="Assessment question: How active are you currently?" loading="lazy"></div>
-        <div class="iphone" data-r="phone"><img src="assets/o/orive-stress.webp" alt="Assessment question: How would you describe your current stress level?" loading="lazy"></div>
-        <div class="iphone" data-r="phone" style="--d:100ms"><img src="assets/o/orive-allset.webp" alt="Confirmation screen: You're all set" loading="lazy"></div>
+        <div class="iphone" data-r="phone"><img src="orive-goal.webp" alt="Assessment question: What is your primary wellness goal?" loading="lazy"></div>
+        <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-active.webp" alt="Assessment question: How active are you currently?" loading="lazy"></div>
+        <div class="iphone" data-r="phone"><img src="orive-stress.webp" alt="Assessment question: How would you describe your current stress level?" loading="lazy"></div>
+        <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-allset.webp" alt="Confirmation screen: You're all set" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -559,10 +560,10 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
     <div class="sticky-comp">
       <div class="copy" data-r><span class="label">Everyday wellness</span><h3>Physical and mental wellness, without switching apps.</h3><p>Workouts, mental health content and daily logs for mood, sleep, food, hydration and activity sit side by side.</p></div>
       <div class="phones">
-        <div class="iphone" data-r="phone"><img src="assets/o/orive-cat-fitness.webp" alt="Categories: fitness workouts" loading="lazy"></div>
-        <div class="iphone" data-r="phone" style="--d:100ms"><img src="assets/o/orive-cat-mental.webp" alt="Categories: mental health tools" loading="lazy"></div>
-        <div class="iphone" data-r="phone"><img src="assets/o/orive-logs.webp" alt="Logs screen for daily check-ins" loading="lazy"></div>
-        <div class="iphone" data-r="phone" style="--d:100ms"><img src="assets/o/orive-mood.webp" alt="Daily mood and emotion check-in" loading="lazy"></div>
+        <div class="iphone" data-r="phone"><img src="orive-cat-fitness.webp" alt="Categories: fitness workouts" loading="lazy"></div>
+        <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-cat-mental.webp" alt="Categories: mental health tools" loading="lazy"></div>
+        <div class="iphone" data-r="phone"><img src="orive-logs.webp" alt="Logs screen for daily check-ins" loading="lazy"></div>
+        <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-mood.webp" alt="Daily mood and emotion check-in" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -570,10 +571,10 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
     <div class="sticky-comp">
       <div class="copy" data-r><span class="label">AI + human support</span><h3>Guidance when you need it, people when you need more.</h3><p>My AI answers everyday questions with suggested prompts. When users want more, they can browse wellness professionals and book a consultation.</p></div>
       <div class="phones">
-        <div class="iphone" data-r="phone"><img src="assets/o/orive-ai.webp" alt="My AI assistant screen" loading="lazy"></div>
-        <div class="iphone" data-r="phone" style="--d:100ms"><img src="assets/o/orive-experts.webp" alt="List of wellness experts" loading="lazy"></div>
-        <div class="iphone" data-r="phone"><img src="assets/o/orive-consult.webp" alt="Expert profile with appointment dates" loading="lazy"></div>
-        <div class="iphone" data-r="phone" style="--d:100ms"><img src="assets/o/orive-booked.webp" alt="Appointment booked confirmation" loading="lazy"></div>
+        <div class="iphone" data-r="phone"><img src="orive-ai.webp" alt="My AI assistant screen" loading="lazy"></div>
+        <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-experts.webp" alt="List of wellness experts" loading="lazy"></div>
+        <div class="iphone" data-r="phone"><img src="orive-consult.webp" alt="Expert profile with appointment dates" loading="lazy"></div>
+        <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-booked.webp" alt="Appointment booked confirmation" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -581,22 +582,15 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
   <section class="feat">
     <div class="sec-head"><h2 data-r style="font-size:clamp(28px,3.4vw,44px)">Key screens</h2><span class="label">Scroll →</span></div>
     <div class="strip" data-r="img">
-      <figure><div class="iphone"><img src="assets/o/orive-onb2.webp" alt="Onboarding: Find your balance" loading="lazy"></div><figcaption>Onboarding</figcaption></figure>
-      <figure><div class="iphone"><img src="assets/o/orive-workout.webp" alt="Workout detail: No-Equipment Strength Circuit" loading="lazy"></div><figcaption>Workout detail</figcaption></figure>
-      <figure><div class="iphone"><img src="assets/o/orive-filters.webp" alt="Workout filters" loading="lazy"></div><figcaption>Workout filters</figcaption></figure>
-      <figure><div class="iphone"><img src="assets/o/orive-cat-consult.webp" alt="Consultation categories" loading="lazy"></div><figcaption>Consultations</figcaption></figure>
-      <figure><div class="iphone"><img src="assets/o/orive-appointments.webp" alt="Appointment time slots" loading="lazy"></div><figcaption>Appointments</figcaption></figure>
+      <figure><div class="iphone"><img src="orive-onb2.webp" alt="Onboarding: Find your balance" loading="lazy"></div><figcaption>Onboarding</figcaption></figure>
+      <figure><div class="iphone"><img src="orive-workout.webp" alt="Workout detail: No-Equipment Strength Circuit" loading="lazy"></div><figcaption>Workout detail</figcaption></figure>
+      <figure><div class="iphone"><img src="orive-filters.webp" alt="Workout filters" loading="lazy"></div><figcaption>Workout filters</figcaption></figure>
+      <figure><div class="iphone"><img src="orive-cat-consult.webp" alt="Consultation categories" loading="lazy"></div><figcaption>Consultations</figcaption></figure>
+      <figure><div class="iphone"><img src="orive-appointments.webp" alt="Appointment time slots" loading="lazy"></div><figcaption>Appointments</figcaption></figure>
     </div>
   </section>
 
-  <section class="block">
-    <span class="label"><span class="num">10</span> Reflection</span>
-    <div class="prose" data-r>
-      <h2>What I’m taking forward</h2>
-      <p><strong>Research reshaped the scope.</strong> Interviews kept pointing to stress and consistency, not just fitness, which is why mood, habits and expert support sit next to workouts.</p>
-      <p><strong>Next.</strong> I want to run usability testing on onboarding and My AI, and check colour contrast and text sizes for accessibility.</p>
-    </div>
-  </section>
+  
 
   <a class="next" href="#crewcares"><div><span class="label">Next project</span><h2>CrewCares</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
 </main>
@@ -617,7 +611,7 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
     </div>
   </section>
 
-  <div class="cc-hero" data-r="img"><img src="assets/cover-crewcares.jpg" alt="CrewCares pre-shift text alert on a phone"></div>
+  <div class="cc-hero" data-r="img"><img src="cover-crewcares.jpg" alt="CrewCares pre-shift text alert on a phone"></div>
 
   <section class="block">
     <span class="label"><span class="num">01</span> Context</span>
@@ -675,9 +669,9 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
       <h2 data-r>Guidance that fits the shift</h2>
       <p data-r style="max-width:66ch">I focused on turning the team’s research and environmental data into something a worker could act on in seconds: understand today’s conditions, get a precaution, and report a concern.</p>
       <div class="cc-frames">
-        <figure data-r><img src="assets/cc-step1.jpg" alt="Text alert 90 minutes before a shift about dust at 42nd Street" loading="lazy"><figcaption><span class="label">Before the shift</span>A text with today’s station, conditions and a precaution.</figcaption></figure>
-        <figure data-r style="--d:100ms"><img src="assets/cc-step2.jpg" alt="Optional health check-in with Apple Health permissions" loading="lazy"><figcaption><span class="label">Their own health</span>Optional check-ins that stay on the worker’s phone.</figcaption></figure>
-        <figure data-r style="--d:200ms"><img src="assets/cc-step3.jpg" alt="Worker files a complaint about dust by text" loading="lazy"><figcaption><span class="label">Report a concern</span>One sentence, sent to the union with station and date.</figcaption></figure>
+        <figure data-r><img src="cc-step1.jpg" alt="Text alert 90 minutes before a shift about dust at 42nd Street" loading="lazy"><figcaption><span class="label">Before the shift</span>A text with today’s station, conditions and a precaution.</figcaption></figure>
+        <figure data-r style="--d:100ms"><img src="cc-step2.jpg" alt="Optional health check-in with Apple Health permissions" loading="lazy"><figcaption><span class="label">Their own health</span>Optional check-ins that stay on the worker’s phone.</figcaption></figure>
+        <figure data-r style="--d:200ms"><img src="cc-step3.jpg" alt="Worker files a complaint about dust by text" loading="lazy"><figcaption><span class="label">Report a concern</span>One sentence, sent to the union with station and date.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -687,9 +681,9 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
     <div class="prose wide">
       <h2 data-r>Where attention may be needed</h2>
       <p data-r style="max-width:66ch">The union side translates environmental and worker-reported information into station-level insight: a live risk map, stations ranked for attention, and member reports grouped by issue.</p>
-      <figure style="margin:0" data-r="img"><div class="media" style="border:1px solid var(--line)"><img src="assets/cc-dashboard.jpg" alt="Operations dashboard with stations monitored, high-risk platforms, worker reports, a risk map and top stations" loading="lazy"></div></figure>
+      <figure style="margin:0" data-r="img"><div class="media" style="border:1px solid var(--line)"><img src="cc-dashboard.jpg" alt="Operations dashboard with stations monitored, high-risk platforms, worker reports, a risk map and top stations" loading="lazy"></div></figure>
       <div class="two" style="align-items:center">
-        <figure style="margin:0" data-r="img"><div class="media"><img src="assets/cc-local-view.jpg" alt="Union summary: stations monitored, high-risk platforms, member reports and what members are reporting" loading="lazy"></div></figure>
+        <figure style="margin:0" data-r="img"><div class="media"><img src="cc-local-view.jpg" alt="Union summary: stations monitored, high-risk platforms, member reports and what members are reporting" loading="lazy"></div></figure>
         <p data-r class="cap" style="margin:0">Figures from the working demo. Platform conditions are modelled and member reports are simulated.</p>
       </div>
     </div>
@@ -721,7 +715,7 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
   <section class="block">
     <span class="label"><span class="num">11</span> Final system</span>
     <div class="prose wide">
-      <figure style="margin:0" data-r="img"><div class="media" style="background:#08179C;display:grid;place-items:center"><video src="assets/cc-demo.mp4" poster="assets/cc-poster.jpg" controls playsinline preload="none" style="max-width:640px" aria-label="CrewCares demo film, 23 seconds, with sound"></video></div><figcaption class="cap">Demo film, 23 seconds, with sound.</figcaption></figure>
+      <figure style="margin:0" data-r="img"><div class="media" style="background:#08179C;display:grid;place-items:center"><video src="cc-demo.mp4" poster="cc-poster.jpg" controls playsinline preload="none" style="max-width:640px" aria-label="CrewCares demo film, 23 seconds, with sound"></video></div><figcaption class="cap">Demo film, 23 seconds, with sound.</figcaption></figure>
       <a class="btn" href="https://crewcares.vercel.app/demo" target="_blank" rel="noopener" style="justify-self:start">Test the product <span class="arr">↗</span></a>
     </div>
   </section>
@@ -1081,7 +1075,7 @@ button:hover{
     </section>
   </div>
 
-  <div class="bleed" data-r="img"><img src="assets/bims-overhead.jpg" alt="Projected fragments of a room on crumpled fabric in darkness"></div>
+  <div class="bleed" data-r="img"><img src="bims-overhead.jpg" alt="Projected fragments of a room on crumpled fabric in darkness"></div>
 
   <div class="wrap">
     <section class="bims-sec two">
@@ -1097,9 +1091,9 @@ button:hover{
     <section class="bims-sec">
       <span class="label"><span class="num">02</span> Experimentation</span>
       <div class="bims-grid" style="margin-top:22px">
-        <img src="assets/bims-closeup.jpg" alt="Close-up of layered projections on paper and fabric" loading="lazy" data-r="img">
+        <img src="bims-closeup.jpg" alt="Close-up of layered projections on paper and fabric" loading="lazy" data-r="img">
         <div class="stack">
-          <img src="assets/bims-room.jpg" alt="Fabric panels hanging in a room, catching projected images" loading="lazy" data-r="img" style="--d:100ms">
+          <img src="bims-room.jpg" alt="Fabric panels hanging in a room, catching projected images" loading="lazy" data-r="img" style="--d:100ms">
         </div>
       </div>
       <p class="cap">Fabric and paper catch the projections unevenly, so each surface shows only part of the image.</p>
@@ -1109,14 +1103,14 @@ button:hover{
       <span class="label"><span class="num">03</span> Fragments → the whole</span>
       <p class="prose" data-r style="margin-top:18px">Stills from the installation film, in order: fragment, then fragment, then more context, until the room comes together.</p>
       <div class="seq" style="margin-top:22px">
-        <figure data-r="img"><img src="assets/b/seq-1.jpg" alt="Empty fabric before projection" loading="lazy"><figcaption>0:01</figcaption></figure>
-        <figure data-r="img" style="--d:180ms"><img src="assets/b/seq-7.jpg" alt="A single small fragment appears" loading="lazy"><figcaption>0:07</figcaption></figure>
-        <figure data-r="img" style="--d:360ms"><img src="assets/b/seq-10.jpg" alt="Fragment showing a clock" loading="lazy"><figcaption>0:10</figcaption></figure>
-        <figure data-r="img" style="--d:540ms"><img src="assets/b/seq-26.jpg" alt="A long fragment of the room across the fabric" loading="lazy"><figcaption>0:26</figcaption></figure>
-        <figure data-r="img" style="--d:720ms"><img src="assets/b/seq-49.jpg" alt="Another angle of the same room" loading="lazy"><figcaption>0:49</figcaption></figure>
-        <figure data-r="img" style="--d:900ms"><img src="assets/b/seq-76.jpg" alt="Fragments combine into a recognizable room" loading="lazy"><figcaption>1:16</figcaption></figure>
+        <figure data-r="img"><img src="bims-seq-1.jpg" alt="Empty fabric before projection" loading="lazy"><figcaption>0:01</figcaption></figure>
+        <figure data-r="img" style="--d:180ms"><img src="bims-seq-7.jpg" alt="A single small fragment appears" loading="lazy"><figcaption>0:07</figcaption></figure>
+        <figure data-r="img" style="--d:360ms"><img src="bims-seq-10.jpg" alt="Fragment showing a clock" loading="lazy"><figcaption>0:10</figcaption></figure>
+        <figure data-r="img" style="--d:540ms"><img src="bims-seq-26.jpg" alt="A long fragment of the room across the fabric" loading="lazy"><figcaption>0:26</figcaption></figure>
+        <figure data-r="img" style="--d:720ms"><img src="bims-seq-49.jpg" alt="Another angle of the same room" loading="lazy"><figcaption>0:49</figcaption></figure>
+        <figure data-r="img" style="--d:900ms"><img src="bims-seq-76.jpg" alt="Fragments combine into a recognizable room" loading="lazy"><figcaption>1:16</figcaption></figure>
       </div>
-      <div class="media" style="background:#000;margin-top:28px;display:grid;place-items:center" data-r="img"><video src="assets/b/film.mp4" poster="assets/b/seq-76.jpg" controls playsinline preload="none" style="max-height:86vh" aria-label="Installation film, 78 seconds"></video></div>
+      <div class="media" style="background:#000;margin-top:28px;display:grid;place-items:center" data-r="img"><video src="bims-film.mp4" poster="bims-seq-76.jpg" controls playsinline preload="none" style="max-height:86vh" aria-label="Installation film, 78 seconds"></video></div>
       <p class="cap">Installation film, 1:18.</p>
     </section>
 
