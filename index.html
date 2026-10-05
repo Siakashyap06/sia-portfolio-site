@@ -324,6 +324,34 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
 .booth .arr{transition:transform .35s var(--ease)}
 .booth:hover{background:rgba(255,255,255,.05);border-color:#8A7C74}
 .booth:hover .arr{transform:translate(3px,-3px)}
+
+.decisions{display:grid;gap:0}
+.decisions div{display:grid;grid-template-columns:44px minmax(0,1fr) 28px minmax(0,1.2fr);gap:14px;align-items:baseline;padding-block:16px;border-top:1px solid var(--line)}
+.decisions div:last-child{border-bottom:1px solid var(--line)}
+.decisions b{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--ink)}
+.decisions i{font-style:normal;color:var(--muted)}
+.decisions span:last-child{color:var(--ink-2)}
+@media (max-width:700px){.decisions div{grid-template-columns:36px 1fr}.decisions i{display:none}.decisions span:last-child{grid-column:2}}
+.home-show{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.68fr);gap:clamp(28px,6vw,96px);align-items:center;padding-block:clamp(48px,7vw,96px);border-top:1px solid var(--line)}
+.home-show .copy{display:grid;gap:16px;align-content:center}
+.home-show h2{font-size:clamp(36px,5vw,68px);line-height:1;font-weight:300;letter-spacing:-.025em}
+.home-show p{color:var(--ink-2);max-width:42ch}
+.home-phone{background:#E6DDD6;border-radius:22px;padding:clamp(28px,4vw,48px) clamp(20px,3vw,40px);display:grid;place-items:center}
+.home-phone .iphone{width:min(340px,100%)}
+@media (max-width:760px){.home-show{grid-template-columns:1fr}}
+.flow-row figcaption{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.flow-row{max-width:760px;margin-left:auto}
+.next-iter{margin-top:10px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;display:grid;gap:8px}
+.next-iter p{font-size:15.5px}
+
+.info-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:10px;padding-top:16px;border-top:1px solid var(--line)}
+.info-row div{display:grid;gap:4px;align-content:start}
+.info-row p{font-size:14px;color:var(--ink-2);line-height:1.45}
+@media (max-width:760px){.info-row{grid-template-columns:1fr 1fr}}
+.statement.big{font-size:clamp(30px,3.8vw,52px);line-height:1.15;max-width:22ch;padding-block:clamp(16px,3vw,40px)}
+.side-tag{justify-self:start;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+.side-tag.w{background:#08179C;color:#EEF1FF}
+.side-tag.u{background:var(--card);color:var(--ink)}
 </style>
 
 </head>
@@ -357,7 +385,7 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
   </section>
 
   <section class="sec" id="work">
-    <div class="sec-head"><h2 data-r>Projects</h2><span class="label">2025–26</span></div>
+    <div class="sec-head"><h2 data-r>Projects</h2></div>
     <div class="grid">
       <a class="proj" href="#orive" data-r>
         <div class="thumb"><img src="cover-orive.jpg" alt="Orivé cover: app home screen beside the Orivé wordmark"></div>
@@ -365,7 +393,7 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
         <p class="tags">UX Case Study · UI/UX · Product Design</p>
       </a>
       <a class="proj" href="#crewcares" data-r style="--d:100ms">
-        <div class="thumb"><img src="cover-crewcares.jpg" alt="CrewCares cover: a phone showing a pre-shift air-quality text"></div>
+        <div class="thumb"><img src="cover-crewcares.jpg" alt="CrewCares cover: a phone showing a worker filing a station complaint by text"></div>
         <div class="proj-meta"><h3>CrewCares</h3><span class="go" aria-hidden="true">↗</span></div>
         <p class="tags">Product Design · Problem Solving</p>
       </a>
@@ -423,12 +451,12 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
     <a class="back" href="#work">← All work</a>
     <span class="label">UX case study · iOS app</span>
     <h1 class="cs-title">Orivé</h1>
-    <p class="cs-sub">Orivé is a holistic wellness app designed to bring physical and mental wellbeing into one connected experience. It combines fitness, mood, sleep, habits, expert support and AI-powered guidance so young adults can manage their wellbeing without navigating multiple disconnected platforms.</p>
+    <p class="cs-sub">Orivé is a holistic wellness app designed to bring physical and mental wellbeing into one connected experience. It brings together fitness, mood, sleep, habits, expert support, and AI-powered guidance, helping young adults understand and manage their wellbeing without switching between disconnected platforms.</p>
     <div class="facts">
       <div><span class="label">Role</span><p>UX Research · Product Design · UI Design</p></div>
       <div><span class="label">Year</span><p>2026</p></div>
       <div><span class="label">Tools</span><p>Figma</p></div>
-      <div><span class="label">Type</span><p>Personal project</p></div>
+      <div><span class="label">Type</span><p>Personal Project</p></div>
     </div>
   </section>
 
@@ -440,22 +468,21 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
 
   <section class="block">
     <span class="label"><span class="num">01</span> Problem</span>
-    <div class="prose" data-r>
+    <div class="prose">
       <h2>Wellbeing is spread across too many apps.</h2>
-      <p>Young adults often manage fitness, sleep, mood, habits and mental wellbeing across separate apps, creating a fragmented experience that becomes difficult to maintain when life gets busy or stressful. Orivé explores how these parts of wellbeing can exist within one personal, supportive experience without making health tracking feel like another responsibility.</p>
+      <p>Young adults often manage fitness, sleep, mood, habits and mental wellbeing across multiple apps, creating a fragmented experience that becomes difficult to maintain when life gets busy or stressful. Orivé explores how these parts of wellbeing can exist within one personal, supportive experience without making health tracking feel like another responsibility.</p>
     </div>
   </section>
 
   <section class="block">
     <span class="label"><span class="num">02</span> Research</span>
     <div class="prose wide">
-      <h2 data-r>Interviews, a survey and a competitive audit</h2>
-      <p data-r style="max-width:66ch">I wrote a 14-question interview guide and a 15-question survey about routines, stress, support and app habits, then compared how Apple Health, Headspace and Reflectly cover different parts of wellbeing. I synthesised responses in an affinity map and empathy map.</p>
-      <div class="quotes" data-r>
+      <h2 data-r>Understanding how young adults manage their wellbeing</h2>
+      <p data-r style="max-width:66ch">I explored how young adults manage their physical and mental wellbeing, what keeps them consistent, and where existing wellness tools create friction. Through interviews, survey responses, and competitive research, a recurring tension emerged: people wanted support and visibility into their wellbeing, but not another system that demanded constant attention.</p>
+      <div class="quotes">
         <blockquote>“Too many notifications, gets annoying and I delete it.”</blockquote>
         <blockquote>“Tracking everything becomes too much work and also using 4 different apps makes it feel repetitive.”</blockquote>
       </div>
-      <p class="cap" style="margin-top:-4px">Interview responses from my research notes.</p>
       <div class="table-wrap" data-r>
         <table class="cmp">
           <thead><tr><th>Feature</th><th>Apple Health</th><th>Headspace</th><th>Reflectly</th></tr></thead>
@@ -469,85 +496,83 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
           </tbody>
         </table>
       </div>
-      <p class="cap">Condensed from my 15-parameter competitive analysis.</p>
+      <p class="cap">The opportunity wasn’t simply adding more wellness features. It was connecting them without adding more friction.</p>
     </div>
   </section>
 
   <section class="block">
     <span class="label"><span class="num">03</span> Synthesis<br>&amp; pain points</span>
     <div class="cards">
-      <div data-r><h3>The consistency gap</h3><p>People want to be healthy but struggle to keep routines when workload and stress rise.</p></div>
-      <div data-r style="--d:90ms"><h3>Too much effort</h3><p>Existing apps need too much tracking, send too many notifications and lock features behind paywalls.</p></div>
-      <div data-r><h3>Fragmented tools</h3><p>Fitness, sleep, mood and habits live in different apps, so nothing feels connected.</p></div>
-      <div data-r style="--d:90ms"><h3>Careful trust in AI</h3><p>Most are open to AI guidance, but accuracy, privacy and losing human support are real concerns.</p></div>
+      <div data-r><h3>The consistency gap</h3><p>People want to maintain healthy routines, but consistency drops when workload and stress increase.</p></div>
+      <div data-r style="--d:90ms"><h3>Too much effort</h3><p>Constant tracking, excessive notifications, and paywalls make wellness apps feel like more work rather than support.</p></div>
+      <div data-r><h3>Fragmented tools</h3><p>Fitness, sleep, mood, and habits live across separate apps, making it difficult to see wellbeing as a connected whole.</p></div>
+      <div data-r style="--d:90ms"><h3>Careful trust in AI</h3><p>People are open to AI guidance, but concerns around accuracy, privacy, and losing human support remain.</p></div>
     </div>
   </section>
 
   <section class="block">
-    <span class="label"><span class="num">04</span> Persona</span>
-    <div class="prose wide"><p data-r style="max-width:66ch">Aanya is a persona built from the patterns in my interviews and survey, not a single participant.</p><div class="persona" data-r>
-      <div class="p-id"><span class="p-avatar" aria-hidden="true">AK</span><h3>Aanya Kapoor</h3><p>19 · Undergraduate · New Delhi<br>Lives away from home during college</p></div>
+    <span class="label"><span class="num">04</span> Who I designed for</span>
+    <div class="prose wide"><p data-r style="max-width:66ch">Research patterns revealed a user who values wellbeing but struggles with the effort required to maintain it.</p><div class="persona" data-r>
+      <div class="p-id"><span class="p-avatar" aria-hidden="true">AK</span><h3>Aanya Kapoor</h3><p>College student · Balancing school, social life &amp; wellbeing</p></div>
       <div class="p-body">
         <p class="p-quote">“I want to be healthier, but I can’t stay consistent.”</p>
-        <p>Between classes, assignments and friends, Aanya never has enough hours. In busy weeks she sacrifices sleep and skips workouts. She has tried wellness apps, but most need too much effort or cover only one part of health.</p>
+        <p>Aanya wants to maintain healthy routines, but when school and stress increase, sleep, exercise and self-care are the first things to fall away. She has tried wellness apps before, but constant tracking makes maintaining them feel like another task.</p>
         <div class="two" style="gap:20px">
-          <div><span class="label">Goals</span><ul><li>Build sustainable routines</li><li>Manage stress and sleep</li><li>Track progress without overwhelm</li></ul></div>
-          <div><span class="label">Frustrations</span><ul><li>Stress disrupts routines</li><li>Apps feel repetitive or demanding</li><li>Guilt when falling behind</li></ul></div>
+          <div><span class="label">Needs</span><ul><li>A simple view of overall wellbeing</li><li>Flexible routines that accommodate inconsistent weeks</li><li>Progress without pressure or guilt</li></ul></div>
+          <div><span class="label">Pain points</span><ul><li>Wellness is fragmented across multiple tools</li><li>Manual tracking becomes repetitive</li><li>Falling behind makes apps easier to abandon</li></ul></div>
         </div>
       </div>
     </div></div>
   </section>
 
   <section class="block">
-    <span class="label"><span class="num">05</span> Problem definition</span>
-    <p class="statement" data-r>How might we bring fitness, mood, sleep, habits and support into one experience that stays easy to keep up with, even in stressful weeks?</p>
+    <span class="label"><span class="num">05</span> Problem statement</span>
+    <p class="statement" data-r>How might we bring fitness, mood, sleep, habits, and support into one experience that remains easy to maintain, even during stressful weeks?</p>
   </section>
 
   <section class="block">
-    <span class="label"><span class="num">06</span> User journey<br>→ product decisions</span>
+    <span class="label"><span class="num">06</span> From insight → decision</span>
     <div class="prose wide">
-      <h2 data-r>Mapping Aanya’s first week</h2>
-      <ol class="steps" data-r>
-        <li><div><b>Long questionnaires cause drop-off</b><span>One question per screen, a progress indicator and a skip option.</span></div></li>
-        <li><div><b>Users hesitate to share health data</b><span>Privacy explained during setup, with controls in the profile.</span></div></li>
-        <li><div><b>Too many habits at once reduce motivation</b><span>Start with one or two habits.</span></div></li>
-        <li><div><b>Emotional tracking feels like work</b><span>Quick, emoji-based mood check-ins.</span></div></li>
-      </ol>
+      <h2 data-r>Research shaped four key decisions</h2>
+      <div class="decisions">
+        <div><span class="num">01</span><b>Onboarding felt overwhelming</b><i>→</i><span>One question at a time, with progress and skip options.</span></div>
+        <div><span class="num">02</span><b>Health data requires trust</b><i>→</i><span>Explain why data is needed and give users control.</span></div>
+        <div><span class="num">03</span><b>Too many habits create pressure</b><i>→</i><span>Start small with one or two manageable habits.</span></div>
+        <div><span class="num">04</span><b>Mood tracking can feel like work</b><i>→</i><span>Quick visual check-ins instead of lengthy inputs.</span></div>
+      </div>
     </div>
   </section>
 
   <section class="block">
     <span class="label"><span class="num">07</span> Information architecture<br>&amp; flows</span>
     <div class="prose wide">
-      <h2 data-r>From card sort to five tabs</h2>
-      <p data-r style="max-width:66ch">A card-sorting exercise grouped every feature, then I condensed them into five predictable destinations, so many wellness functions live in places users can find without thinking.</p>
-      <div class="ia" data-r>
-        <div><b>Home</b><span>Daily summary · Today’s goals · Streaks</span></div>
-        <div><b>Categories</b><span>Fitness · Mental health · Consultations</span></div>
-        <div><b>My AI</b><span>AI chat · Journaling · Recommendations</span></div>
-        <div><b>Logs</b><span>Mood · Sleep · Food · Hydration · Activity</span></div>
-        <div><b>Profile</b><span>Goals · Notifications · Privacy</span></div>
+      <h2 data-r>One place for every part of wellbeing</h2>
+      <p data-r style="max-width:66ch">I organized Orivé around five destinations, separating everyday actions from deeper support so users can quickly understand where to go and what to do next.</p>
+      <div class="ia">
+        <div><b>Home</b><span>Daily overview · Goals · Progress</span></div>
+        <div><b>Explore</b><span>Fitness · Mental health · Professional support</span></div>
+        <div><b>My AI</b><span>Guidance · Journaling · Recommendations</span></div>
+        <div><b>Logs</b><span>Mood · Sleep · Nutrition · Activity</span></div>
+        <div><b>Profile</b><span>Goals · Preferences · Privacy</span></div>
       </div>
       <span class="label" style="margin-top:14px">Core task flow</span>
-      <div class="flow" data-r><span>Sign up</span><i>→</i><span>Health assessment</span><i>→</i><span>Goal selection</span><i>→</i><span>Wellness plan</span><i>→</i><span>Home</span><i>→</i><span>Mood · Fitness · Habits · Journal</span></div>
+      <div class="flow"><span>Sign up</span><i>→</i><span>Health assessment</span><i>→</i><span>Goal selection</span><i>→</i><span>Wellness plan</span><i>→</i><span>Home</span><i>→</i><span>Mood · Fitness · Habits · Journal</span></div>
     </div>
   </section>
 
-  <!-- 09 Final product -->
-  <section class="transition-line">
-    <span class="label"><span class="num">08</span> Final design</span>
-    <h2 data-r style="margin-top:16px">One home for your everyday wellness.</h2>
+  <section class="home-show">
+    <div class="copy">
+      <span class="label"><span class="num">08</span> Final design</span>
+      <h2>One home for your everyday wellness.</h2>
+      <p>A daily overview brings progress, routines, and priorities together without asking users to check multiple parts of the app.</p>
+    </div>
+    <div class="home-phone" data-r="img"><div class="iphone" data-r="phone"><img src="orive-home.webp" alt="Orivé home screen with workout streak, daily stats and to-do list" loading="lazy"></div></div>
   </section>
-  <div class="home-feature" data-r="img">
-    <div class="iphone" data-r="phone"><img src="orive-home.webp" alt="Orivé home screen" loading="lazy"></div>
-  </div>
-  <p class="cap">Home brings the workout streak, steps, active minutes, calories and a short to-do list onto one screen.</p>
 
-  <!-- 10 Key features -->
   <section class="feat">
     <span class="label"><span class="num">09</span> High-fidelity screens</span>
     <div class="sticky-comp" style="margin-top:26px">
-      <div class="copy" data-r><span class="label">Personalized onboarding</span><h3>Start with what matters to you.</h3><p>A short health assessment asks about goals, activity level and stress, one question at a time, so the plan fits the person.</p></div>
+      <div class="copy"><span class="label">Personalized onboarding</span><h3>Start with what matters to you.</h3><p>A lightweight assessment captures goals, activity, and stress one question at a time, creating a more relevant starting point without an overwhelming setup.</p></div>
       <div class="phones">
         <div class="iphone" data-r="phone"><img src="orive-goal.webp" alt="Assessment question: What is your primary wellness goal?" loading="lazy"></div>
         <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-active.webp" alt="Assessment question: How active are you currently?" loading="lazy"></div>
@@ -558,10 +583,17 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
   </section>
   <section class="feat">
     <div class="sticky-comp">
-      <div class="copy" data-r><span class="label">Everyday wellness</span><h3>Physical and mental wellness, without switching apps.</h3><p>Workouts, mental health content and daily logs for mood, sleep, food, hydration and activity sit side by side.</p></div>
+      <div class="copy"><span class="label">Everyday wellness</span><h3>Physical and mental wellbeing, in one place.</h3><p>Workouts, mental health resources, and everyday tracking live within the same experience, making it easier to move between different parts of wellbeing.</p></div>
       <div class="phones">
         <div class="iphone" data-r="phone"><img src="orive-cat-fitness.webp" alt="Categories: fitness workouts" loading="lazy"></div>
         <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-cat-mental.webp" alt="Categories: mental health tools" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+  <section class="feat">
+    <div class="sticky-comp">
+      <div class="copy"><span class="label">Everyday tracking</span><h3>Check in without making it a chore.</h3><p>Quick logs make mood, sleep, hydration, activity, and reflection easy to capture without turning wellbeing into another task.</p></div>
+      <div class="phones">
         <div class="iphone" data-r="phone"><img src="orive-logs.webp" alt="Logs screen for daily check-ins" loading="lazy"></div>
         <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-mood.webp" alt="Daily mood and emotion check-in" loading="lazy"></div>
       </div>
@@ -569,28 +601,37 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
   </section>
   <section class="feat">
     <div class="sticky-comp">
-      <div class="copy" data-r><span class="label">AI + human support</span><h3>Guidance when you need it, people when you need more.</h3><p>My AI answers everyday questions with suggested prompts. When users want more, they can browse wellness professionals and book a consultation.</p></div>
+      <div class="copy"><span class="label">AI + human support</span><h3>Guidance when you need it, people when you need more.</h3><p>AI offers lightweight everyday guidance, while professional support remains a separate, visible path when users need more than a recommendation.</p></div>
       <div class="phones">
         <div class="iphone" data-r="phone"><img src="orive-ai.webp" alt="My AI assistant screen" loading="lazy"></div>
-        <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-experts.webp" alt="List of wellness experts" loading="lazy"></div>
-        <div class="iphone" data-r="phone"><img src="orive-consult.webp" alt="Expert profile with appointment dates" loading="lazy"></div>
-        <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-booked.webp" alt="Appointment booked confirmation" loading="lazy"></div>
+        <div class="iphone" data-r="phone" style="--d:100ms"><img src="orive-experts.webp" alt="List of wellness professionals" loading="lazy"></div>
       </div>
+    </div>
+    <div class="phone-row c3 flow-row" style="margin-top:clamp(36px,5vw,64px)">
+      <figure data-r="phone"><div class="iphone"><img src="orive-consult.webp" alt="Professional profile with appointment dates" loading="lazy"></div><figcaption>Profile</figcaption></figure>
+      <figure data-r="phone" style="--d:100ms"><div class="iphone"><img src="orive-appointments.webp" alt="Appointment time slots" loading="lazy"></div><figcaption>Choose a time</figcaption></figure>
+      <figure data-r="phone" style="--d:200ms"><div class="iphone"><img src="orive-booked.webp" alt="Appointment booked confirmation" loading="lazy"></div><figcaption>Booked</figcaption></figure>
     </div>
   </section>
 
   <section class="feat">
     <div class="sec-head"><h2 data-r style="font-size:clamp(28px,3.4vw,44px)">Key screens</h2><span class="label">Scroll →</span></div>
     <div class="strip" data-r="img">
-      <figure><div class="iphone"><img src="orive-onb2.webp" alt="Onboarding: Find your balance" loading="lazy"></div><figcaption>Onboarding</figcaption></figure>
-      <figure><div class="iphone"><img src="orive-workout.webp" alt="Workout detail: No-Equipment Strength Circuit" loading="lazy"></div><figcaption>Workout detail</figcaption></figure>
-      <figure><div class="iphone"><img src="orive-filters.webp" alt="Workout filters" loading="lazy"></div><figcaption>Workout filters</figcaption></figure>
-      <figure><div class="iphone"><img src="orive-cat-consult.webp" alt="Consultation categories" loading="lazy"></div><figcaption>Consultations</figcaption></figure>
-      <figure><div class="iphone"><img src="orive-appointments.webp" alt="Appointment time slots" loading="lazy"></div><figcaption>Appointments</figcaption></figure>
+      <figure><div class="iphone"><img src="orive-onb2.webp" alt="Onboarding: Find your balance" loading="lazy"></div></figure>
+      <figure><div class="iphone"><img src="orive-workout.webp" alt="Workout detail: No-Equipment Strength Circuit" loading="lazy"></div></figure>
+      <figure><div class="iphone"><img src="orive-filters.webp" alt="Workout filters" loading="lazy"></div></figure>
+      <figure><div class="iphone"><img src="orive-cat-consult.webp" alt="Consultation categories" loading="lazy"></div></figure>
+      <figure><div class="iphone"><img src="orive-onb3.webp" alt="Onboarding: Understand yourself" loading="lazy"></div></figure>
     </div>
   </section>
 
-  
+  <section class="block">
+    <span class="label"><span class="num">10</span> Reflection</span>
+    <div class="prose">
+      <h2>Designing for consistency, not perfection.</h2>
+      <p>Orivé changed how I think about wellness products. The challenge wasn’t fitting more health features into one app, but deciding what deserved attention and what could stay out of the way. Research pushed me toward shorter interactions, flexible tracking, and a clearer boundary between AI guidance and human support.</p>
+    </div>
+  </section>
 
   <a class="next" href="#crewcares"><div><span class="label">Next project</span><h2>CrewCares</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
 </main>
@@ -611,13 +652,19 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
     </div>
   </section>
 
-  <div class="cc-hero" data-r="img"><img src="cover-crewcares.jpg" alt="CrewCares pre-shift text alert on a phone"></div>
+  <div class="cc-hero" data-r="img"><img src="cover-crewcares.jpg" alt="CrewCares complaint flow: a worker reports dust by the express track"></div>
 
   <section class="block">
     <span class="label"><span class="num">01</span> Context</span>
     <div class="prose" data-r>
-      <h2>30 hours at Cornell Tech</h2>
-      <p>CrewCares was built at the Health in Climate AI Hackathon during Climate Week NYC, with teammates from technical and research backgrounds and input from mentors across product, clinical and public health.</p>
+      <h2>Designing for health below the city</h2>
+      <p>CrewCares originated at the Health in Climate AI Hackathon at Cornell Tech during Climate Week NYC. Working across design, technical, and research disciplines, our team explored how environmental information could become something subway workers and their unions could actually use.</p>
+      <div class="info-row">
+        <div><span class="label">Role</span><p>UX/UI Design, Product Strategy</p></div>
+        <div><span class="label">Team</span><p>5-person multidisciplinary team</p></div>
+        <div><span class="label">Focus</span><p>Worker experience, union dashboard, interaction design</p></div>
+        <div><span class="label">Context</span><p>Health in Climate AI Hackathon, Cornell Tech</p></div>
+      </div>
     </div>
   </section>
 
@@ -633,7 +680,7 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
     <span class="label"><span class="num">03</span> Research &amp;<br>environmental evidence</span>
     <div class="prose" data-r>
       <h2>What the underground can mean for health</h2>
-      <p>We looked at the conditions that matter most underground: <strong>particulate matter, heat, humidity, flooding and ventilation</strong>, and what they could mean for people spending full shifts in them.</p>
+      <p>We focused on environmental conditions that can become especially relevant underground: <strong>particulate matter, heat, humidity, flooding and ventilation</strong>, and what prolonged exposure could mean for workers spending full shifts in these environments.</p>
     </div>
   </section>
 
@@ -641,13 +688,13 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
     <span class="label"><span class="num">04</span> Data limitations</span>
     <div class="prose" data-r>
       <h2>The data we needed didn’t exist.</h2>
-      <p>There is no public per-station air-quality feed for the NYC subway. Instead, the team worked from available above-ground weather and air-quality readings and explored ways of estimating conditions underground.</p>
+      <p>There is no public, live station-level environmental feed for the NYC subway. Rather than presenting estimates as measurements, the system combines available above-ground environmental data with modelled underground conditions.</p>
     </div>
   </section>
 
   <section class="block">
     <span class="label"><span class="num">05</span> Opportunity</span>
-    <p class="statement" data-r>Give workers information that makes sense for today’s shift, and give their union a clearer picture of where attention may be needed.</p>
+    <p class="statement big" data-r>Give workers information they can act on today, while giving unions a clearer picture of where attention is needed.</p>
   </section>
 
   <section class="block">
@@ -666,8 +713,9 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
   <section class="block">
     <span class="label"><span class="num">07</span> Worker experience</span>
     <div class="prose wide">
+      <span class="side-tag w">Worker side</span>
       <h2 data-r>Guidance that fits the shift</h2>
-      <p data-r style="max-width:66ch">I focused on turning the team’s research and environmental data into something a worker could act on in seconds: understand today’s conditions, get a precaution, and report a concern.</p>
+      <p data-r style="max-width:66ch">I focused on translating environmental research and system data into information a worker could understand and act on quickly: what conditions to expect, what precaution may help, and how to report a concern.</p>
       <div class="cc-frames">
         <figure data-r><img src="cc-step1.jpg" alt="Text alert 90 minutes before a shift about dust at 42nd Street" loading="lazy"><figcaption><span class="label">Before the shift</span>A text with today’s station, conditions and a precaution.</figcaption></figure>
         <figure data-r style="--d:100ms"><img src="cc-step2.jpg" alt="Optional health check-in with Apple Health permissions" loading="lazy"><figcaption><span class="label">Their own health</span>Optional check-ins that stay on the worker’s phone.</figcaption></figure>
@@ -677,10 +725,11 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
   </section>
 
   <section class="block">
-    <span class="label"><span class="num">08</span> Union dashboard</span>
+    <span class="label"><span class="num">08</span> Union experience</span>
     <div class="prose wide">
-      <h2 data-r>Where attention may be needed</h2>
-      <p data-r style="max-width:66ch">The union side translates environmental and worker-reported information into station-level insight: a live risk map, stations ranked for attention, and member reports grouped by issue.</p>
+      <span class="side-tag u">Union side</span>
+      <h2 data-r>From individual reports to system-level patterns</h2>
+      <p data-r style="max-width:66ch">The union dashboard brings environmental signals and worker-reported concerns together at the station level, helping stakeholders identify patterns and prioritize where attention may be needed.</p>
       <figure style="margin:0" data-r="img"><div class="media" style="border:1px solid var(--line)"><img src="cc-dashboard.jpg" alt="Operations dashboard with stations monitored, high-risk platforms, worker reports, a risk map and top stations" loading="lazy"></div></figure>
       <div class="two" style="align-items:center">
         <figure style="margin:0" data-r="img"><div class="media"><img src="cc-local-view.jpg" alt="Union summary: stations monitored, high-risk platforms, member reports and what members are reporting" loading="lazy"></div></figure>
@@ -698,17 +747,17 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
         <div class="e" data-r style="--d:100ms"><span class="tag">Modelled / estimated</span><h3>Platform conditions</h3><ul><li>Platform PM2.5, temperature and humidity</li><li>Flood and mould risk</li><li>A 1–5 risk level per station</li></ul></div>
         <div class="s" data-r style="--d:200ms"><span class="tag">Simulated</span><h3>Demo reports</h3><ul><li>Worker complaints in the demo are a synthetic set, not real submissions</li></ul></div>
       </div>
-      <p class="cap">No official live MTA underground sensor data was used. Modelled figures show where to look first, not whether a station is safe.</p>
+      <p class="cap">No official live MTA underground sensor data was used. Modelled figures indicate where further attention may be warranted; they do not determine whether a station is safe.</p>
     </div>
   </section>
 
   <section class="block">
     <span class="label"><span class="num">10</span> Design decisions</span>
     <ol class="steps" data-r>
-      <li><div><b>Meet workers where they are</b><span>The worker side runs in a text thread. No app to install.</span></div></li>
-      <li><div><b>Instructions, not evidence</b><span>Alerts lead with what to do today, like wearing an N95.</span></div></li>
-      <li><div><b>Separate health from reports</b><span>Health answers stay on the phone. A complaint carries only station, date and the worker’s words.</span></div></li>
-      <li><div><b>Label every estimate</b><span>Modelled and simulated figures are marked wherever they appear.</span></div></li>
+      <li><div><b>Meet workers where they are</b><span>The worker experience runs through familiar messaging rather than requiring another app.</span></div></li>
+      <li><div><b>Lead with action, not data</b><span>Alerts prioritize what a worker can do now rather than asking them to interpret environmental readings.</span></div></li>
+      <li><div><b>Separate health from reports</b><span>Personal health information stays on the worker’s device. A submitted concern carries only the station, date and worker’s report.</span></div></li>
+      <li><div><b>Label every estimate</b><span>Modelled and simulated figures are clearly identified wherever they appear.</span></div></li>
     </ol>
   </section>
 
@@ -723,12 +772,12 @@ table.cmp{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
   <section class="block">
     <span class="label"><span class="num">12</span> Reflection</span>
     <div class="prose" data-r>
-      <h2>Designing with data</h2>
-      <p>This project changed how I think about designing with data. I entered the weekend most comfortable with UX and interface design, but working with teammates across technical and research backgrounds taught me how design can become the bridge between complex information and the people who need to act on it.</p>
-      <p>We didn’t get the outcome we hoped for, but I left with a new way of approaching problems and more confidence working in rooms where I’m not the expert.</p>
+      <h2>Designing beyond the interface</h2>
+      <p>CrewCares changed how I think about the role of product design in data-heavy systems. I entered the project most comfortable with UX and interface design, but working across technical and research disciplines pushed me to think beyond individual screens and consider how information moves through an entire system.</p>
+      <p>The most important challenge was not visualizing more data. It was deciding what each person actually needed to know, what should remain private, and where uncertainty needed to be made explicit. The project gave me more confidence designing in spaces where I am not the subject-matter expert and using design to make complex information understandable and actionable.</p>
     </div>
   </section>
-  <p class="disclaimer">Independent student prototype, not affiliated with the MTA. Created during the Health in Climate AI hackathon.</p>
+  <p class="disclaimer">Independent student prototype, not affiliated with the MTA. Created during the Health in Climate AI Hackathon.</p>
 
   <a class="next" href="#ai-tarot"><div><span class="label">Next project</span><h2>AI Tarot Reader</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
 </main>
@@ -1135,10 +1184,12 @@ button:hover{
   if(!reduce && 'IntersectionObserver' in window) root.classList.add('js-motion');
   var io=root.classList.contains('js-motion')?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.2,rootMargin:'0px 0px -5% 0px'}):null;
   if(io){
-    document.querySelectorAll('.view .label, .view h2, .view h3, .view .prose > p, .view .cap, .view .cs-top > *, .view .facts > *').forEach(function(el){
+    document.querySelectorAll('.view .label, .view h2, .view h3, .view .prose > p, .view .copy > p, .view .cap, .view .cs-top > *, .view .facts > *, .view .decisions > div, .view .ia > div, .view .quotes > blockquote, .view .steps > li, .view .flow').forEach(function(el){
       if(el.hasAttribute('data-r')||el.closest('[data-r]')) return;
       el.setAttribute('data-r','');
-      if(el.tagName==='P'||el.classList.contains('cap')) el.style.setProperty('--d','140ms');
+      var p=el.parentElement, sib=p?[].indexOf.call(p.children,el):0;
+      if(el.matches('.decisions > div, .ia > div, .quotes > blockquote, .steps > li, .facts > *')) el.style.setProperty('--d',Math.min(sib,5)*90+'ms');
+      else if(el.tagName==='P'||el.classList.contains('cap')) el.style.setProperty('--d','140ms');
     });
     var lio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('line-in');lio.unobserve(e.target);}});},{threshold:0});
     document.querySelectorAll('.sec,.block,.feat,.next,.transition-line,.bims-sec,.facts,.disclaimer,.skills').forEach(function(el){el.classList.add('lined');lio.observe(el);});
