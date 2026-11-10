@@ -477,6 +477,49 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
 @media (max-width:560px){.xp-wrap .xp li{grid-template-columns:1fr;gap:4px}}
 .bleed.bims-hero{width:auto;margin-left:0;display:grid;place-items:center}
 .bleed.bims-hero img{width:min(720px,100%);max-height:none;border-radius:14px}
+.ia-sec,.ia-sec h2{scroll-margin-top:110px}
+.ia-steps{list-style:none;margin:6px 0 4px;padding:0;display:flex;flex-wrap:wrap;gap:14px 0}
+.ia-steps li{display:grid;gap:4px;min-width:0}
+.ia-steps li+li{position:relative;padding-left:56px}
+.ia-steps li+li::before{content:"";position:absolute;left:14px;top:20px;width:28px;height:1px;background:var(--muted)}
+.ia-steps li+li::after{content:"";position:absolute;left:38px;top:16.5px;border:4px solid transparent;border-left:6px solid var(--muted);border-right:0}
+.ia-steps b{font-family:var(--serif);font-weight:400;font-size:40px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.ia-steps span{font-size:13.5px;color:var(--ink-2);white-space:nowrap}
+.ia-map{display:grid;border-top:1px solid var(--line)}
+.ia-row{display:grid;grid-template-columns:minmax(0,1.4fr) 64px minmax(0,1fr);align-items:center;gap:16px;padding-block:13px;border-bottom:1px solid var(--line)}
+.ia-row.head{padding-block:9px}
+.ia-from{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.ia-from span{font-size:14px;line-height:1.3;padding:4px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink-2)}
+.ia-from span.re{border-style:dashed;color:var(--muted)}
+.ia-link{height:1px;background:var(--line);position:relative}
+.ia-link::after{content:"";position:absolute;right:-1px;top:-4px;border:4.5px solid transparent;border-left:6px solid var(--muted);border-right:0}
+.ia-to{font-family:var(--serif);font-size:20px;line-height:1.25;color:var(--ink);min-width:0}
+.ia-to small{display:block;font-family:var(--sans);font-size:13px;color:var(--muted)}
+.ia-flow{overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.ia-flow .flow{flex-wrap:nowrap;width:max-content}
+.ia-note{max-width:66ch;margin:6px 0 0;padding-left:14px;border-left:2px solid var(--line);display:grid;gap:4px;font-size:15px;color:var(--ink-2)}
+@media (max-width:640px){.ia-row{grid-template-columns:1fr;gap:8px}.ia-row.head,.ia-link{display:none}.ia-to::before{content:"→ ";color:var(--muted)}.ia-steps{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:0}.ia-steps b{font-size:30px}.ia-steps span{white-space:normal;font-size:12.5px}.ia-steps li+li{padding-left:24px}.ia-steps li+li::before{left:4px;top:15px;width:12px}.ia-steps li+li::after{left:14px;top:11.5px}}
+.ag-flow{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.ag-flow li{border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px;align-content:start;min-width:0}
+.ag-flow .n{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.ag-flow h4{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.2;margin:0;color:var(--ink)}
+.ag-chips{display:flex;flex-wrap:wrap;gap:6px}
+.ag-chips span{font-size:13px;line-height:1.3;padding:3px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-2)}
+.ag-chips span.h{border-style:dashed;color:var(--muted)}
+.ag-flow p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.ag-board{border:1px dashed var(--accent);border-radius:12px;padding:14px 16px;display:grid;gap:4px;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.ag-board b{color:var(--ink);font-weight:600}
+@media (max-width:860px){.ag-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.ag-flow{grid-template-columns:1fr}}
+.co-embed{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.co-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 10px;border-bottom:1px solid var(--line)}
+.co-tabs{display:flex;gap:4px;flex-wrap:wrap}
+.co-tabs button{background:transparent;border:0;color:var(--ink-2);font:500 13px var(--mono);padding:7px 11px;border-radius:8px;cursor:pointer}
+.co-tabs button[aria-selected="true"]{background:var(--bg-2);color:var(--ink)}
+.co-tabs button:focus-visible,.co-open:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.co-open{font-size:13.5px;color:var(--ink-2);text-decoration:none;padding:6px 4px}
+.co-frame{display:block;width:100%;height:min(78vh,760px);border:0;background:#fff}
+@media (max-width:640px){.co-frame{height:70vh}}
 </style>
 
 </head>
@@ -521,6 +564,11 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
         <div class="thumb"><img src="cover-crewcares.jpg" alt="CrewCares cover: a phone showing a worker filing a station complaint by text"></div>
         <div class="proj-meta"><h3>CrewCares</h3><span class="go" aria-hidden="true">↗</span></div>
         <p class="tags">Product Design · Problem Solving</p>
+      </a>
+      <a class="proj" href="#cool-orbit" data-r>
+        <div class="thumb"><img src="cover-coolorbit.jpg" alt="Cool Orbit dashboard: a lavender planet beside the headline Finding the right materials to keep AI cool in orbit" loading="lazy"></div>
+        <div class="proj-meta"><h3>Cool Orbit</h3><span class="go" aria-hidden="true">↗</span></div>
+        <p class="tags">Product Design · Data Visualization · AI Agents</p>
       </a>
       <a class="proj" href="#ai-tarot" data-r>
         <div class="thumb"><img src="cover-tarot.jpg" alt="AI Tarot Reader interface on a purple gradient" loading="lazy"></div>
@@ -582,9 +630,9 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
     <h1 class="cs-title">Orivé</h1>
     <p class="cs-sub">Designing one calm place for body and mind, for young adults whose wellness routines fall apart when life gets busy.</p>
     <div class="tldr">
-      <div><span class="label">Problem</span><p>Young adults track fitness, sleep and mood across separate apps, and their routines are the first thing to go when stress rises.</p></div>
-      <div><span class="label">What I did</span><p>The full product design process, solo: interviews, a survey and competitive analysis, persona, IA, sketches, wireframes, visual exploration, hi-fi UI and usability testing.</p></div>
-      <div><span class="label">Outcome</span><p>A complete hi-fi iOS design of 30+ screens that brings workouts, daily logs, AI guidance and expert support into one app.</p></div>
+      <div><span class="label">Problem</span><p>Young adults struggle to maintain consistent wellness routines while managing fitness, sleep, and mental well-being across disconnected platforms.</p></div>
+      <div><span class="label">My role</span><p><strong>Sole Product Designer</strong></p><p>Led end-to-end product design, including user research, information architecture, UI/UX, prototyping, and usability testing.</p></div>
+      <div><span class="label">Outcome</span><p>Designed Orivé, a unified iOS wellness experience with 30+ high-fidelity screens integrating fitness tracking, personalized AI guidance, and expert consultations.</p></div>
     </div>
     <div class="facts">
       <div><span class="label">Project</span><p>Orivé · Personal case study</p></div>
@@ -602,28 +650,27 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
 
   <section class="block">
     <span class="label"><span class="num">01</span> Overview</span>
-    <div class="prose">
+    <div data-r class="prose">
       <h2>One app for the whole of wellbeing</h2>
       <p>Orivé is a holistic wellness app that brings physical and mental wellbeing into one connected experience. It combines fitness, mood, sleep, habits, expert support and AI-powered guidance, so young adults can understand and manage their wellbeing without switching between disconnected platforms.</p>
-      <p>I designed it end to end on my own, from the first interview question to the final screen, which meant I owned every decision along the way.</p>
     </div>
   </section>
 
   <section class="block">
     <span class="label"><span class="num">02</span> Impact</span>
-    <div class="prose wide">
+    <div data-r class="prose wide">
       <ul class="impact">
-        <li>Turned interviews, a survey and a 15-parameter competitive analysis into four insights that widened Orivé from fitness into stress, sleep, mood and expert support.</li>
-        <li>Restructured the app from four tabs to five, giving AI guidance its own home and moving everyday tracking into a dedicated Logs tab.</li>
-        <li>Usability tested the first hi-fi designs and made six key changes, from a dedicated My AI tab to a complete booking flow.</li>
-        <li>Designed 30+ high-fidelity screens across onboarding, an 8-question health assessment, workouts, logs, My AI and a full booking flow.</li>
+        <li>Synthesized 10 user interviews, 16 survey responses, and a 15-parameter competitive analysis into five actionable insights, expanding Orivé’s scope beyond fitness to include stress, sleep, mood, and expert support.</li>
+        <li>Restructured the app’s information architecture from four to five primary tabs, introducing dedicated spaces for AI guidance and daily wellness tracking.</li>
+        <li>Conducted two rounds of remote usability testing with five participants each, translating feedback into six key design improvements, including a dedicated My AI experience and a complete expert booking flow.</li>
+        <li>Designed 30+ high-fidelity iOS screens spanning onboarding, wellness assessments, workouts, daily tracking, AI-powered guidance, and expert consultations.</li>
       </ul>
     </div>
   </section>
 
   <section class="block">
     <span class="label"><span class="num">03</span> The challenge</span>
-    <div class="prose">
+    <div data-r class="prose">
       <h2>Support without another chore</h2>
       <p>Young adults often manage fitness, sleep, mood, habits and mental wellbeing across multiple apps. That fragmented experience becomes hard to keep up when life gets busy or stressful.</p>
       <p>The hard part wasn’t fitting more health features into one app. It was deciding what deserved attention and what could stay out of the way, so tracking wellbeing never felt like another responsibility.</p>
@@ -632,28 +679,29 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
 
   <section class="block">
     <span class="label"><span class="num">04</span> Research</span>
-    <div class="prose wide">
+    <div data-r class="prose wide">
       <h2>Understanding how young adults manage their wellbeing</h2>
       <div class="stats">
-        <div><b>10+</b><span>interviews</span></div>
-        <div><b>14</b><span>interview questions</span></div>
-        <div><b>15</b><span>survey questions</span></div>
-        <div><b>15</b><span>parameters compared</span></div>
+        <div><b>10</b><span>interviews</span></div>
+        <div><b>16</b><span>survey responses</span></div>
+        <div><b>10/15</b><span>named time or sleep as their biggest challenge</span></div>
+        <div><b>8/14</b><span>said health apps are too complicated or too much work</span></div>
       </div>
       <p style="max-width:66ch">I explored how young adults manage their physical and mental wellbeing, what keeps them consistent, and where existing tools create friction. Across interviews, survey responses and competitive research, one tension kept coming up: people wanted support and visibility into their wellbeing, but not another system that demanded constant attention.</p>
       <div class="quotes">
-        <blockquote>“Too many notifications, gets annoying and I delete it.”</blockquote>
+        <blockquote>“If I have 5 mins I can only keep track on 1–2 apps so it becomes quite disruptive.”</blockquote>
+        <blockquote>“Some weeks I have less work so I can be consistent for a month straight, but then sometimes no time so I am all over the place.”</blockquote>
         <blockquote>“Tracking everything becomes too much work and also using 4 different apps makes it feel repetitive.”</blockquote>
       </div>
-      <p class="cap">Interview responses from my research notes.</p>
+      <p class="cap">All quotes are from real participants interviewed during the user research process.</p>
     </div>
   </section>
 
   <section class="block">
     <span class="label"><span class="num">05</span> Competitor analysis</span>
-    <div class="prose wide">
+    <div data-r class="prose wide">
       <h2>Every app covered one slice</h2>
-      <p style="max-width:66ch">I compared Apple Health, Headspace and Reflectly across 15 parameters. Each was strong in one area of wellbeing and missing the others.</p>
+      <p style="max-width:66ch">I compared Apple Health, Headspace and Reflectly across 15 parameters. Each was strong in one area of wellbeing and missing the others, and none of the three connected users to a real professional.</p>
       <div class="comp">
         <div class="comp-card">
           <h3>Apple Health</h3><span class="tag">Physical &amp; lifestyle</span>
@@ -671,30 +719,32 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
           <div><span class="label">Gaps</span><ul><li>No fitness or sleep support</li><li>No connection to experts</li></ul></div>
         </div>
       </div>
-      <div class="opp"><span class="label">Opportunity for Orivé</span><p>Connect body, mind and real expert support in one place, without adding more friction.</p></div>
+      <div class="opp"><span class="label">Opportunity for Orivé</span><p>Connect body, mind and real expert support in one place, without adding more friction. The missing path to a professional became Orivé’s booking flow.</p></div>
     </div>
   </section>
 
   <section class="block">
     <span class="label"><span class="num">06</span> Synthesis</span>
     <div class="cards">
-      <div data-r><h3>The consistency gap</h3><p>People want to maintain healthy routines, but consistency drops when workload and stress increase.</p></div>
-      <div data-r style="--d:90ms"><h3>Too much effort</h3><p>Constant tracking, excessive notifications and paywalls make wellness apps feel like more work rather than support.</p></div>
-      <div data-r><h3>Fragmented tools</h3><p>Fitness, sleep, mood and habits live across separate apps, making it hard to see wellbeing as a connected whole.</p></div>
-      <div data-r style="--d:90ms"><h3>Careful trust in AI</h3><p>People are open to AI guidance, but concerns around accuracy, privacy and losing human support remain.</p></div>
+      <div data-r><h3>Too much effort</h3><p>8 of 14 survey respondents found health apps too complicated or too much work. Interviewees described constant tracking, frequent notifications and paywalls as making wellness feel like another responsibility.</p></div>
+      <div data-r style="--d:90ms"><h3>The consistency gap</h3><p>10 of 15 respondents named time management or sleep as their biggest challenge. Across interviews, stress consistently came up as the main reason healthy routines broke down.</p></div>
+      <div data-r><h3>A gap between tracking and needs</h3><p>10 of 12 respondents mostly used step counting or nutrition tracking, yet 10 of 15 chose habit tracking or journaling as the most useful feature. What people track today is not what they want support with.</p></div>
+      <div data-r style="--d:90ms"><h3>Fragmented experiences</h3><p>Several interviewees juggled two or more health apps. Most wanted one unified experience, as long as it stayed simple to navigate; one preferred separate tools.</p></div>
+      <div data-r><h3>Conditional trust in AI</h3><p>Only 3 of 15 respondents chose AI support as the most useful feature. In interviews, openness to AI guidance depended on accuracy, reliability and data privacy.</p></div>
     </div>
   </section>
 
   <section class="block">
     <span class="label"><span class="num">07</span> Who I designed for</span>
-    <div class="prose wide"><p style="max-width:66ch">Research patterns revealed a user who values wellbeing but struggles with the effort required to maintain it.</p><div class="persona" data-r>
-      <div class="p-id"><span class="p-avatar" aria-hidden="true">AK</span><h3>Aanya Kapoor</h3><p>College student · Balancing school, social life &amp; wellbeing</p></div>
+    <div class="prose wide"><p style="max-width:66ch">Based on interviews and survey findings, I developed a research-informed persona representing students who value their wellbeing but struggle to maintain consistent routines alongside academic and personal responsibilities.</p><div class="persona" data-r>
+      <div class="p-id"><span class="p-avatar" aria-hidden="true">AK</span><h3>Aanya Kapoor</h3><p>College Student · Balancing academics, social life, and wellbeing</p></div>
       <div class="p-body">
         <p class="p-quote">“I want to be healthier, but I can’t stay consistent.”</p>
-        <p>Aanya wants to maintain healthy routines, but when school and stress increase, sleep, exercise and self-care are the first things to fall away. She has tried wellness apps before, but constant tracking makes maintaining them feel like another task.</p>
+        <div><span class="label">Core goal</span><p>Maintain a healthier lifestyle without adding another demanding routine.</p></div>
+        <div><span class="label">About</span><p>Aanya wants to prioritize her wellbeing, but academic pressure and changing schedules often disrupt her habits. Existing wellness apps require more time and consistency than she can realistically maintain.</p></div>
         <div class="two" style="gap:20px">
-          <div><span class="label">Needs</span><ul><li>A simple view of overall wellbeing</li><li>Flexible routines that accommodate inconsistent weeks</li><li>Progress without pressure or guilt</li></ul></div>
-          <div><span class="label">Pain points</span><ul><li>Wellness is fragmented across multiple tools</li><li>Manual tracking becomes repetitive</li><li>Falling behind makes apps easier to abandon</li></ul></div>
+          <div><span class="label">Needs</span><ul><li>A unified view of her overall wellbeing</li><li>Flexible tracking that adapts to changing routines</li><li>Encouragement without pressure or guilt</li></ul></div>
+          <div><span class="label">Pain points</span><ul><li>Managing multiple disconnected wellness apps</li><li>Repetitive and time-consuming manual tracking</li><li>Losing motivation after missing a few days</li></ul></div>
         </div>
       </div>
     </div></div>
@@ -707,38 +757,38 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
 
   <section class="block">
     <span class="label"><span class="num">09</span> Key decisions</span>
-    <div class="prose wide">
+    <div data-r class="prose wide">
       <h2>Research shaped four key decisions</h2>
       <div class="kd">
-        <article class="kd-item">
+        <article data-r class="kd-item">
           <div class="kd-copy">
             <span class="num">01</span><h3>One question at a time</h3>
-            <div><span class="label">Research</span><p>Long questionnaires felt overwhelming and caused drop-off.</p></div>
-            <div><span class="label">Decision</span><p>An 8-question health assessment that shows one question per screen, with a progress indicator and a skip option on every step.</p></div>
+            <div><span class="label">Research</span><p>8 of 14 survey respondents found health apps too complicated or too much work, and 5 of 14 felt they lacked personalization. Journey mapping flagged long onboarding questionnaires as a likely point of drop-off.</p></div>
+            <div><span class="label">Design decision</span><p>Split the eight-question assessment into individual steps, using progressive disclosure, visible progress and optional skipping to reduce cognitive load while still collecting the preferences that personalize the plan.</p></div>
           </div>
           <div class="kd-phone"><div class="iphone"><img src="orive/f-goal.webp" alt="Assessment question: What is your primary wellness goal?" loading="lazy"></div></div>
         </article>
-        <article class="kd-item">
+        <article data-r class="kd-item">
           <div class="kd-copy">
             <span class="num">02</span><h3>Earning trust with health data</h3>
-            <div><span class="label">Research</span><p>People hesitate to share health data, and trust in AI depends on accuracy and privacy.</p></div>
-            <div><span class="label">Decision</span><p>Explain why data is needed during setup and give users control over it, with AI guidance kept separate from human support.</p></div>
+            <div><span class="label">Research</span><p>Interviewees were cautious about AI-driven health guidance, with trust depending on accuracy, reliability and privacy. Several raised data privacy concerns on their own.</p></div>
+            <div><span class="label">Design decision</span><p>Made sensitive health questions optional, so users can skip them without interrupting onboarding, and kept AI guidance clearly separate from support from real experts.</p></div>
           </div>
           <div class="kd-phone"><div class="iphone"><img src="orive/f-concerns.webp" alt="Assessment step asking users to describe their health concerns" loading="lazy"></div></div>
         </article>
-        <article class="kd-item">
+        <article data-r class="kd-item">
           <div class="kd-copy">
             <span class="num">03</span><h3>Start small</h3>
-            <div><span class="label">Research</span><p>Too many habits at once create pressure and reduce motivation.</p></div>
-            <div><span class="label">Decision</span><p>Start with one or two manageable habits, shown as a short to-do list on Home next to the workout streak.</p></div>
+            <div><span class="label">Research</span><p>11 of 16 respondents described their lifestyle as “somewhere in the middle”, and interviews showed how stress and changing schedules disrupted consistency.</p></div>
+            <div><span class="label">Design decision</span><p>Prioritized a short, manageable daily task list on the home screen, next to the workout streak, so building habits feels approachable rather than overwhelming.</p></div>
           </div>
           <div class="kd-phone"><div class="iphone"><img src="orive/f-home.webp" alt="Home screen with a short to-do list" loading="lazy"></div></div>
         </article>
-        <article class="kd-item">
+        <article data-r class="kd-item">
           <div class="kd-copy">
             <span class="num">04</span><h3>Check-ins in seconds</h3>
-            <div><span class="label">Research</span><p>Mood tracking can feel like work.</p></div>
-            <div><span class="label">Decision</span><p>Quick visual check-ins: tap how you feel and pick an emotion, instead of writing long entries.</p></div>
+            <div><span class="label">Research</span><p>Participants were interested in personal journaling, chosen as most useful by 5 of 15 respondents, but described repetitive manual tracking as a barrier to staying consistent.</p></div>
+            <div><span class="label">Design decision</span><p>Made the daily mood check-in visual and tap-based, so users can log how they feel in seconds, with journaling still available in Logs when they want to write more.</p></div>
           </div>
           <div class="kd-phone"><div class="iphone"><img src="orive-mood.webp" alt="Daily mood check-in with emoji options" loading="lazy"></div></div>
         </article>
@@ -746,20 +796,37 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
     </div>
   </section>
 
-  <section class="block">
+  <section class="block ia-sec">
     <span class="label"><span class="num">10</span> Information architecture<br>&amp; flows</span>
-    <div class="prose wide">
+    <div data-r class="prose wide">
       <h2>One place for every part of wellbeing</h2>
-      <p style="max-width:66ch">A card sort grouped features into Fitness, Mental Wellness, AI Coach, Habits, Progress and Support. I organized Orivé around five destinations, separating everyday actions from deeper support so users can quickly understand where to go next.</p>
+      <p style="max-width:66ch">I organized 41 features into eight groups through card sorting, then consolidated them into five navigation destinations. Usability testing informed the shift from four to five tabs, creating clearer separation between daily tracking, wellness resources, and personalized guidance.</p>
+      <ol class="ia-steps" aria-label="How the structure evolved">
+        <li><b>41</b><span>Features</span></li>
+        <li><b>8</b><span>Groups</span></li>
+        <li><b>4</b><span>Initial tabs</span></li>
+        <li><b>5</b><span>Final tabs</span></li>
+      </ol>
+      <span class="label" style="margin-top:14px">From card sort to navigation</span>
+      <div class="ia-map">
+        <div class="ia-row head"><span class="label">Card-sort groups</span><span></span><span class="label">Destination</span></div>
+        <div data-r class="ia-row"><div class="ia-from"><span>Home</span><span>Habits</span><span>Progress</span></div><div class="ia-link" aria-hidden="true"></div><div class="ia-to">Home</div></div>
+        <div data-r class="ia-row"><div class="ia-from"><span>Fitness</span><span>Mental Wellness</span><span>Support</span></div><div class="ia-link" aria-hidden="true"></div><div class="ia-to">Categories</div></div>
+        <div data-r class="ia-row"><div class="ia-from"><span>AI Coach</span></div><div class="ia-link" aria-hidden="true"></div><div class="ia-to">My AI</div></div>
+        <div data-r class="ia-row"><div class="ia-from"><span class="re">Daily tracking features</span></div><div class="ia-link" aria-hidden="true"></div><div class="ia-to">Logs<small>Reassigned from Fitness and Mental Wellness</small></div></div>
+        <div data-r class="ia-row"><div class="ia-from"><span>Onboarding</span></div><div class="ia-link" aria-hidden="true"></div><div class="ia-to">Onboarding flow<small>Outside the tab bar</small></div></div>
+      </div>
+      <span class="label" style="margin-top:14px">Final navigation</span>
       <div class="ia">
         <div><b>Home</b><span>Daily overview · Goals · Progress</span></div>
-        <div><b>Categories</b><span>Fitness · Mental health · Consultations</span></div>
-        <div><b>My AI</b><span>Guidance · Suggested prompts</span></div>
-        <div><b>Logs</b><span>Mood · Sleep · Food · Hydration · Activity · Journal</span></div>
+        <div><b>Categories</b><span>Fitness · Mental Wellness · Consultations</span></div>
+        <div><b>My AI</b><span>Personalized guidance · Suggested prompts</span></div>
+        <div><b>Logs</b><span>Mood · Sleep · Nutrition · Activity · Journal</span></div>
         <div><b>Profile</b><span>Goals · Preferences · Privacy</span></div>
       </div>
-      <span class="label" style="margin-top:14px">Core task flow</span>
-      <div class="flow"><span>Sign up</span><i>→</i><span>Health assessment</span><i>→</i><span>Goal selection</span><i>→</i><span>Wellness plan</span><i>→</i><span>Home</span><i>→</i><span>Mood · Fitness · Habits · Journal</span></div>
+      <span class="label" style="margin-top:14px">Core onboarding flow</span>
+      <div class="ia-flow"><div class="flow"><span>Sign Up</span><i>→</i><span>Health Assessment</span><i>→</i><span>Goal Selection</span><i>→</i><span>Personalized Wellness Plan</span><i>→</i><span>Home</span></div></div>
+      <p class="ia-note"><span class="label">Design note</span>Card sorting helped establish the app’s initial structure, while usability testing revealed the need for clearer separation between everyday tracking, wellness resources, and personalized guidance. These findings informed the shift from four to five navigation tabs.</p>
     </div>
   </section>
 
@@ -799,7 +866,7 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
     <span class="label"><span class="num">13</span> Visual direction</span>
     <div class="prose wide">
       <h2>Finding a calm, personal look</h2>
-      <p style="max-width:66ch">I wanted Orivé to feel calm and personal rather than clinical. I built moodboards for five palettes and explored typefaces including DM Sans, Asta Sans and IBM Plex Sans.</p>
+      <p style="max-width:66ch">I wanted Orivé to feel calm and personal rather than clinical. I built moodboards for five palettes and explored typefaces including DM Sans, Asta Sans and IBM Plex Sans. Orivé’s deep maroon grew out of the dusty rose palette.</p>
       <div class="strip mood" data-r="img">
         <figure><img src="orive/mood-1.webp" alt="Sage and emerald palette with inspiration images" loading="lazy"><figcaption>Sage + emerald</figcaption></figure>
         <figure><img src="orive/mood-2.webp" alt="Periwinkle and mint palette with inspiration images" loading="lazy"><figcaption>Periwinkle + mint</figcaption></figure>
@@ -814,7 +881,7 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
         <div class="test-row chosen" data-r="img"><div class="test-label"><b>IBM Plex Sans</b><span>Deep maroon · chosen</span></div><div class="phone-row c3"><div class="iphone"><img src="orive/ct-plex-cat.webp" alt="IBM Plex Sans test: categories" loading="lazy"></div><div class="iphone"><img src="orive/ct-plex-profile.webp" alt="IBM Plex Sans test: expert profile" loading="lazy"></div><div class="iphone"><img src="orive/ct-plex-home.webp" alt="IBM Plex Sans test: home" loading="lazy"></div></div></div>
         <div class="test-row" data-r="img"><div class="test-label"><b>Asta Sans</b><span>Periwinkle</span></div><div class="phone-row c3"><div class="iphone"><img src="orive/ct-asta-cat.webp" alt="Asta Sans test: categories" loading="lazy"></div><div class="iphone"><img src="orive/ct-asta-profile.webp" alt="Asta Sans test: expert profile" loading="lazy"></div><div class="iphone"><img src="orive/ct-asta-home.webp" alt="Asta Sans test: home" loading="lazy"></div></div></div>
       </div>
-      <p class="cap">Feedback from others pointed to IBM Plex Sans with deep maroon on warm cream, which became Orivé’s visual identity.</p>
+      <p class="cap">After testers described the first green design as clinical, side-by-side comparisons pointed to IBM Plex Sans with deep maroon, a deeper shade from the dusty rose palette, which became Orivé’s visual identity.</p>
     </div>
   </section>
 
@@ -822,7 +889,7 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
     <span class="label"><span class="num">14</span> Usability testing<br>&amp; iterations</span>
     <div class="prose wide">
       <h2>What testing changed</h2>
-      <p style="max-width:66ch">I put my first high-fidelity designs in front of users and asked them to complete core tasks: get set up, find a workout, ask the AI a question and book an expert. Watching where they hesitated led to six key changes.</p>
+      <p style="max-width:66ch">I ran two rounds of remote usability testing with 5 participants each, asking them to complete four core tasks: get set up, find a workout, ask the AI a question and book an expert. Watching where they hesitated led to six key changes.</p>
 
       <div class="changes">
         <article class="change-item">
@@ -831,7 +898,7 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
         </article>
         <article class="change-item">
           <div class="ba2"><figure><div class="iphone"><img src="orive/st-categories.webp" alt="Before: four-tab navigation" loading="lazy"></div><figcaption>Before</figcaption></figure><figure><div class="iphone"><img src="orive/f-cat-fitness.webp" alt="After: five-tab navigation" loading="lazy"></div><figcaption>After</figcaption></figure></div>
-          <div class="change-copy"><span class="num">02</span><h3>Four tabs became five</h3><p>Home, Category, Track and Profile became Home, Categories, My AI, Logs and Profile.</p><p class="why"><b>Why · from testing</b> Testers looked for a place to log their day and couldn’t find one under “Track”. A Logs tab and a My AI tab matched what they were looking for.</p></div>
+          <div class="change-copy"><span class="num">02</span><h3>Four tabs became five</h3><p>Home, Category, Track and Profile became Home, Categories, My AI, Logs and Profile.</p><p class="why"><b>Why · from testing</b> While moving through the app, testers looked for a place to log their day and couldn’t find one under “Track”. A Logs tab and a My AI tab matched what they were looking for.</p></div>
         </article>
         <article class="change-item">
           <div class="ba2"><figure><div class="iphone"><img src="orive/st-home.webp" alt="Before: dense home with six cards" loading="lazy"></div><figcaption>Before</figcaption></figure><figure><div class="iphone"><img src="orive/f-home.webp" alt="After: focused home" loading="lazy"></div><figcaption>After</figcaption></figure></div>
@@ -847,7 +914,7 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
         </article>
         <article class="change-item">
           <div class="ba2"><figure><div class="iphone"><img src="orive/st-consultants.webp" alt="Before: green palette" loading="lazy"></div><figcaption>Before</figcaption></figure><figure><div class="iphone"><img src="orive/f-experts.webp" alt="After: maroon palette" loading="lazy"></div><figcaption>After</figcaption></figure></div>
-          <div class="change-copy"><span class="num">06</span><h3>A warmer visual system</h3><p>Green with serif accents became deep maroon on warm cream, set entirely in IBM Plex Sans.</p><p class="why"><b>Why · from testing</b> Testers described the green design as clinical. In side-by-side comparisons, users preferred maroon and IBM Plex Sans as warmer and more personal.</p></div>
+          <div class="change-copy"><span class="num">06</span><h3>A warmer visual system</h3><p>Green with serif accents became deep maroon with warm cream surfaces, set entirely in IBM Plex Sans.</p><p class="why"><b>Why · from testing</b> Testers described the green design as clinical. In side-by-side comparisons, users preferred maroon and IBM Plex Sans as warmer and more personal.</p></div>
         </article>
       </div>
     </div>
@@ -947,7 +1014,7 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
 
   <section class="block">
     <span class="label"><span class="num">18</span> Outcome</span>
-    <div class="prose">
+    <div data-r class="prose">
       <h2>Designing for consistency, not perfection</h2>
       <p>Orivé became a complete high-fidelity iOS design: onboarding, an 8-question health assessment, workouts, everyday logs, My AI and a full booking flow, all in one consistent visual system.</p>
       <p>The biggest shift was in what to leave out. Research pushed me toward shorter interactions, flexible tracking and a clearer boundary between AI guidance and human support.</p>
@@ -1173,6 +1240,177 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
     </div>
   </section>
   <p class="disclaimer">Independent student prototype, not affiliated with or endorsed by the MTA. Created during the Health in Climate AI Hackathon.</p>
+
+  <a class="next" href="#cool-orbit"><div><span class="label">Next project</span><h2>Cool Orbit</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
+</main>
+
+<!-- ================= COOL ORBIT ================= -->
+<main class="view wrap" id="v-cool-orbit" data-view="cool-orbit" hidden>
+  <section class="cs-top">
+    <a class="back" href="#work">← All work</a>
+    <span class="label">Product design · Full-stack · ScienceClaw Hackathon, MIT Media Lab</span>
+    <h1 class="cs-title">Cool Orbit</h1>
+    <p class="cs-sub">AI agents that search for better ways to keep AI chips cool in orbit, and check each other so the answer can be trusted.</p>
+    <div class="tldr">
+      <div><span class="label">Problem</span><p>AI computers are heading to space, but there is no air to carry their heat away. We set out to find the best thermal-battery material, and to show that AI agents can get the science right.</p></div>
+      <div><span class="label">What I did</span><p>Designed and built the public dashboard, and worked on the backend with a team that split the engineering evenly: the Docker sandbox that kept our experiment fair, and prompts for the agents.</p></div>
+      <div><span class="label">Outcome</span><p>In one weekend: a working team of AI agents, a ranked shortlist with gallium as the strongest alternative to wax, and a live dashboard that shows which results earned trust.</p></div>
+    </div>
+    <div class="facts">
+      <div><span class="label">Event</span><p>ScienceClaw Hackathon, MIT Media Lab</p></div>
+      <div><span class="label">Role</span><p>Product Designer &amp; Full-Stack Developer</p></div>
+      <div><span class="label">Year</span><p>2026</p></div>
+      <div><span class="label">Tools</span><p>HTML, CSS, JavaScript, Python, Docker, Claude Code, NVIDIA ALCHEMI</p></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px"><a class="btn" href="https://siakashyap06.github.io/cool-orbit/" target="_blank" rel="noopener">View dashboard <span class="arr">↗</span></a><a class="btn ghost" href="https://github.com/Siakashyap06/cool-orbit" target="_blank" rel="noopener">Check out the project <span class="arr">↗</span></a></div>
+  </section>
+
+  <figure style="margin:0" data-r="img"><div class="media frame" style="border-radius:14px;overflow:hidden"><img src="coolorbit/overview.webp" alt="Cool Orbit dashboard overview: headline, the answer so far and four key numbers comparing gallium with paraffin"></div></figure>
+
+  <section class="block">
+    <span class="label"><span class="num">01</span> Overview</span>
+    <div class="prose">
+      <h2>Teaching AI agents to check each other’s science</h2>
+      <p>Cool Orbit was built in one weekend at the ScienceClaw Hackathon at MIT Media Lab. It is a team of AI agents running on NVIDIA ALCHEMI that searches for “thermal battery” materials to cool AI chips in orbit, then tries to prove every answer wrong before it counts.</p>
+      <p>Our team split the engineering evenly, and I worked across the full stack. On the front end, I designed and built the dashboard that turns the agents’ work into something anyone can follow. On the back end, I built the Docker sandbox the agents ran in and wrote the prompts that shaped them.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">02</span> Impact</span>
+    <div class="prose wide">
+      <ul class="impact">
+        <li>Designed a four-page dashboard (Overview, Materials, Trust, Agents) that turns hundreds of agent posts and checks into answers a judge can read in a minute.</li>
+        <li>Made trust visible: a result is only shown as trusted once a method audit, a second method and a real measurement all agree.</li>
+        <li>Built the Docker sandbox that kept our single-agent comparison fair, so the 80% vs 60% result could be believed.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">03</span> The challenge</span>
+    <div class="prose">
+      <h2>Science is the benchmark</h2>
+      <p>ScienceClaw asked teams to build decentralized collectives of AI agents doing real science. The rule was simple: success meant a scientifically meaningful result backed by evidence, not just an agent finishing a task.</p>
+      <p>We chose cooling AI in orbit: real, urgent and small enough for a weekend. Google’s Project Suncatcher satellite runs one AI chip at a time, in 15-minute bursts, to avoid straining its power and cooling. In space, there is no air to carry the heat away.</p>
+      <div class="opp"><span class="label">The twist</span><p>NVIDIA had just shown that AI agents often run simulations confidently even when the science is wrong. So our second question was: can a team of agents that check each other catch the mistakes a single agent ships?</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">04</span> The science, simply</span>
+    <div class="prose">
+      <h2>A thermal battery for bursty AI chips</h2>
+      <p>A thermal battery is a material that melts to soak up a burst of heat, then refreezes while the radiator catches up, so the radiator can be sized for average heat instead of the peak. NASA flew a paraffin-wax version on the ISS. Wax stores heat well but moves it slowly, and it turns liquid, which is awkward in zero gravity.</p>
+      <div class="chips"><span>Melts at 315–345 K</span><span>Heat stored per kilogram</span><span>Conducts heat well</span><span>Works in microgravity</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">05</span> The design question</span>
+    <p class="statement" data-r>How might we show judges and scientists which AI results to believe, in under a minute, without hiding where the science is still uncertain?</p>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">06</span> How it works</span>
+    <div class="prose wide">
+      <h2>No boss agent, just a shared board</h2>
+      <p style="max-width:66ch">Every agent is a separate program with one job. They never take orders from each other; they coordinate only by posting to a shared results board.</p>
+      <span class="label" style="margin-top:6px">The agent system</span>
+      <ol class="ag-flow"><li data-r><span class="n">01</span><h4>Steer</h4><div class="ag-chips"><span class="h">The team</span><span class="h">Chemistry lead</span></div><p>People set the rules before any agent runs: the trust tolerances, the operating temperature window and the test tasks.</p></li><li data-r><span class="n">02</span><h4>Propose</h4><div class="ag-chips"><span>Scouts, one per material family</span></div><p>Suggest candidate materials and route each one to a simulation engine that can actually handle it.</p></li><li data-r><span class="n">03</span><h4>Gate</h4><div class="ag-chips"><span>Premise checker</span></div><p>Asks whether a property can even be measured with this method, model, size and timescale. Impossible tasks stop here.</p></li><li data-r><span class="n">04</span><h4>Simulate</h4><div class="ag-chips"><span>Simulator</span></div><p>Runs two-phase melting simulations with NVIDIA ALCHEMI on the GPU, batching every trial temperature into one job.</p></li><li data-r><span class="n">05</span><h4>Try to prove it wrong</h4><div class="ag-chips"><span>Rule referee</span><span>AI referee</span><span>Classical-MD referee</span><span>Librarian</span><span>Adjudicator</span></div><p>Audit the method, rerun it with an independent method, compare against real measurements and settle disagreements.</p></li><li data-r><span class="n">06</span><h4>Keep</h4><div class="ag-chips"><span>Results board</span><span>Trust rule</span><span>Ranker</span></div><p>An append-only record. Trust is computed from the evidence, and the shortlist uses trusted results only.</p></li></ol>
+      <div class="ag-board" data-r><b>No boss, one shared board</b>Agents never message each other. Each one claims work and posts results to the shared board, and no agent can mark its own result as trusted. Everything ran on one Dell Pro Max GB10: the agents, the board, the ALCHEMI simulations on its GPU and the classical checks on its CPU cores.</div>
+      <figure style="margin:0" data-r="img"><div class="co-embed"><div class="co-bar"><span class="label">Live dashboard · try it here</span><a class="co-open" href="https://siakashyap06.github.io/cool-orbit/#/agents" target="_blank" rel="noopener">Open full screen ↗</a></div><iframe class="co-frame" src="https://siakashyap06.github.io/cool-orbit/#/agents" title="Cool Orbit live dashboard" loading="lazy"></iframe></div><figcaption class="cap">The live dashboard, embedded. Use its menu to move between pages, or open it full screen. On the Agents page, every box is a real agent, with counts from the results board and numbered loop-backs where work went round again.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">07</span> Designing the dashboard</span>
+    <div class="prose wide">
+      <h2>One question per page</h2>
+      <p style="max-width:66ch">The agents produced hundreds of posts, checks and reruns. I organized the dashboard around the questions a judge asks, in order: what did you find, which material wins, why should I believe it, and how does it work?</p>
+      <div class="rounds">
+        <div class="round" data-r="img">
+          <span class="label">Decision 1 · Lead with the answer</span>
+          <p>The Overview (shown at the top of this page) opens with “Answer so far”: gallium wins 5 of 9 comparisons, and the trade-off is weight. Four large numbers follow, each with its real values underneath.</p>
+        </div>
+        <div class="round" data-r="img">
+          <span class="label">Decision 2 · Show the trade-off honestly</span>
+          <div class="media frame"><img src="coolorbit/materials.webp" alt="Materials page: a split bar of wins and a paraffin versus gallium table" loading="lazy"></div>
+          <p>The Materials page puts “Where gallium wins” beside “Where paraffin wins,” with a split bar of the score and a highlighted note that neither material melts inside the operating window yet.</p>
+        </div>
+        <div class="round" data-r="img">
+          <span class="label">Decision 3 · Trust is earned, not claimed</span>
+          <div class="media frame"><img src="coolorbit/trust.webp" alt="Trust page: three numbered steps a result must pass, and real cases where a check caught a mistake" loading="lazy"></div>
+          <p>The Trust page turns the rule into three numbered steps, each with its own evidence count, followed by real cases where a clean-looking run hid a wrong assumption, what caught it and what happened next.</p>
+        </div>
+      </div>
+      <div class="kc">
+        <div><b>Every number is real</b><span>Values come from the agents’ exported results, or the element is hidden.</span></div>
+        <div><b>Colour means status</b><span>Green trusted, amber under review, orange flagged, red failed. Lavender is the only accent.</span></div>
+        <div><b>Calm, editorial type</b><span>Serif headlines with Inter body text, so dense science still reads quietly.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">08</span> Building the sandbox</span>
+    <div class="prose wide">
+      <h2>A fair test needs a locked room</h2>
+      <p style="max-width:66ch">To show our agent team beat a single agent, we compared three setups on the same tasks and budget: a single agent, a worker with a checker, and our collective. I worked on the Docker sandbox that kept the comparison honest. Each run happens in a fresh, locked-down container that is deleted afterwards.</p>
+      <div class="data3">
+        <div class="m" data-r><span class="tag">Can see</span><h3>Only what it needs</h3><ul><li>Its own work folder</li><li>The shared results board</li><li>The same measured reference values every setup gets</li></ul></div>
+        <div class="e" data-r style="--d:100ms"><span class="tag">Never sees</span><h3>The answers</h3><ul><li>The task list and grading</li><li>Our referee code and project brief</li><li>Home folder, SSH or cloud keys</li></ul></div>
+        <div class="s" data-r style="--d:200ms"><span class="tag">Limits</span><h3>Safe by default</h3><ul><li>A time limit stops runaway runs</li><li>System permissions dropped</li><li>The API key never appears in the command</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">09</span> Building the agents</span>
+    <div class="prose wide">
+      <h2>The right model for each job</h2>
+      <p style="max-width:66ch">The whole team wrote prompts and built agents together. We matched each job to a Claude model by how much judgment it needs, and wrote the same rules into every agent: check the premise first, never invent a value or a citation, log everything, and report failures openly.</p>
+      <div class="kc">
+        <div><b>Claude Fable 5.1</b><span>The adjudicator that settles referee disputes, and the literature review that set our trust tolerances.</span></div>
+        <div><b>Claude Opus 5.5</b><span>The method referee, the premise checker and the baseline agents in the sandbox.</span></div>
+        <div><b>Claude Sonnet &amp; Haiku 5.5</b><span>Scouts and the librarian on Sonnet; short summaries for the dashboard on Haiku.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">10</span> Results</span>
+    <div class="prose wide">
+      <h2>Gallium leads, and the agents earn their keep</h2>
+      <div class="kc">
+        <div><b>5 of 9 comparisons</b><span>won by gallium over paraffin wax. It conducts heat 189× better but the device is 2.2× heavier.</span></div>
+        <div><b>80% vs 60%</b><span>of simulation traps caught by our collective vs a single agent, at about half the cost per run.</span></div>
+        <div><b>1358 K</b><span>copper’s simulated melting point, matching the measured 1357.8 K, one of the results that earned “trusted” status.</span></div>
+      </div>
+      <div class="opp"><span class="label">Honest limits</span><p>Neither material melts inside our operating window yet, the comparison was small (8 tasks, 3 repeats), and gallium’s ranking uses measured data because its simulations failed. We show all of this on the dashboard.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">11</span> Final product</span>
+    <div class="prose wide">
+      <h2>See it live</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn" href="https://siakashyap06.github.io/cool-orbit/" target="_blank" rel="noopener">Explore the dashboard <span class="arr">↗</span></a>
+        <a class="btn ghost" href="https://github.com/Siakashyap06/cool-orbit" target="_blank" rel="noopener">View the code <span class="arr">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">12</span> Outcome</span>
+    <div class="prose">
+      <h2>Design is how people decide what to trust</h2>
+      <p>The agents could be right, but without a clear way to see the evidence, nobody has a reason to believe them. Designing the Trust page made me think of trust as something a page has to earn, step by step.</p>
+      <p>Building the sandbox and writing agent prompts meant I understood what the data actually meant before I designed how to show it. And showing the failures openly made the project more convincing, not less.</p>
+    </div>
+  </section>
+  <p class="disclaimer">Team project built at the ScienceClaw Hackathon at MIT Media Lab. Results are simulations and rankings, not a new material.</p>
 
   <a class="next" href="#ai-tarot"><div><span class="label">Next project</span><h2>AI Tarot Reader</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
 </main>
