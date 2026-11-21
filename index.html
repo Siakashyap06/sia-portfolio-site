@@ -1957,7 +1957,7 @@ button:hover{
     </a>
     <a class="frow" href="#cool-orbit">
       <div class="fcard" data-flip="y"><img src="cover-coolorbit.jpg" alt="Cool Orbit cover" loading="lazy"></div>
-      <div class="ftext"><span class="label"><span class="num">03</span> Product Design · Data Visualization · AI Agents</span><h2>Cool Orbit</h2><p>A dashboard that helps people judge which AI results to trust. Built at MIT.</p><span class="btn ghost">View project <span class="arr">↗</span></span></div>
+      <div class="ftext"><span class="label"><span class="num">03</span> Product Design · Data Visualization · AI Agents</span><h2>Cool Orbit</h2><p>A dashboard for an AI agent that finds materials to keep orbital data centers cool. Made at the ScienceClaw hackathon at the MIT Media Lab.</p><span class="btn ghost">View project <span class="arr">↗</span></span></div>
     </a>
   </div>
   <a class="next" href="#interaction-design"><div><span class="label">Next area</span><h2>Interaction &amp; Experience Design</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
@@ -2028,27 +2028,16 @@ button:hover{
   </section>
 
   <section class="block" style="display:block">
-    <div class="rm-intro">
+    <div class="rm-intro" style="grid-template-columns:1.1fr 1fr;align-items:start">
       <div class="prose" data-r>
         <p>A prototype of a self-soothing device designed to support moments of overwhelm through responsive interaction. The device uses a sound sensor to detect high noise levels and automatically triggers a guided breathing sequence, using LED light as inhale and exhale cues to calm the user down.</p>
         <p>Built using Arduino and basic physical computing components, this project involved multiple iterations and hands-on troubleshooting. Early versions faced issues with soldering connections, unstable readings from the sensor and inconsistent LED behavior. Through testing and rebuilding circuits, the prototype became more stable and responsive.</p>
         <p>The focus is on minimal interaction: no buttons, just an automatic system that activates when needed, exploring how environmental input can translate into calming feedback.</p>
       </div>
-      <p class="caps" data-r style="--d:120ms">Prototype of a self-soothing device that detects noise levels and guides breathing through light-based feedback, developed through iterative testing and circuit troubleshooting.</p>
-    </div>
-  </section>
-
-  <section class="block">
-    <span class="label">Prototype</span>
-    <div class="prose wide">
-      <div class="media" data-r="img"><img src="ssd-hero.jpg" alt="The finished device: a cardboard stand with an LCD, LEDs, a smiling sun and a heart" style="border-radius:14px"></div>
-    </div>
-  </section>
-
-  <section class="block">
-    <span class="label">Prototype video</span>
-    <div class="prose wide">
-      <div class="media" style="background:#000;display:grid;place-items:center;border-radius:14px" data-r="img"><video src="ssd-prototype.mp4?v=2" poster="ssd-prototype-poster.jpg?v=2" controls playsinline preload="metadata" style="max-height:80vh;max-width:100%" aria-label="Prototype video of the self-soothing device"></video></div>
+      <div data-r="img" style="--d:120ms;display:grid;gap:clamp(10px,1.4vw,16px)">
+        <img src="ssd-hero.jpg" alt="The finished device: a cardboard stand with an LCD, LEDs, a smiling sun and a heart" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px">
+        <img src="ssd-closeup.jpg" alt="Close-up of the circuit: LCD reading Breathe, red, green and white LEDs and the paper sun" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px">
+      </div>
     </div>
   </section>
 
@@ -2056,6 +2045,13 @@ button:hover{
     <span class="label">Ideation</span>
     <div class="prose wide">
       <div class="media" data-r="img"><img src="ssd-ideation.jpg" alt="Ideation sketch: forms, components and a four-step storyboard of the interaction" loading="lazy" style="border-radius:14px"></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label">Prototype video</span>
+    <div class="prose wide">
+      <div class="media" style="background:#000;display:grid;place-items:center;border-radius:14px;max-width:560px" data-r="img"><video src="ssd-prototype.mp4?v=2" poster="ssd-prototype-poster.jpg?v=2" controls playsinline preload="metadata" style="max-height:62vh;max-width:100%;display:block" aria-label="Prototype video of the self-soothing device"></video></div>
     </div>
   </section>
 
