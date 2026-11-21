@@ -72,6 +72,33 @@ ul{margin:0}
 .sec-head h2{font-size:clamp(34px,4.6vw,60px);line-height:1}
 
 /* project cards */
+.cat-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid var(--line,#d9d0c8);padding-top:18px;margin:clamp(40px,6vw,72px) 0 clamp(20px,3vw,32px)}
+.sec-head + .cat-head{margin-top:0}
+.cat-head h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.6vw,34px);margin:0}
+.grid.cats{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.grid.cats{grid-template-columns:1fr}}
+.frows{display:grid;gap:clamp(70px,12vw,170px);padding-block:clamp(30px,6vw,80px) clamp(60px,10vw,120px)}
+.frow{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,5vw,72px);align-items:center;text-decoration:none;color:inherit}
+.frow.rev{grid-template-columns:1fr 1.25fr}.frow.rev .fcard{order:2}
+.fcard{aspect-ratio:5/4;border-radius:18px;overflow:hidden;background:var(--bg-2);box-shadow:0 30px 60px -30px rgba(40,25,15,.45);transform-style:preserve-3d;will-change:transform;transition:box-shadow .4s}
+.fcard img{width:100%;height:100%;object-fit:cover;display:block}
+.frow:hover .fcard{box-shadow:0 40px 80px -30px rgba(40,25,15,.6)}
+.ftext h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,68px);line-height:1;margin:14px 0 14px;letter-spacing:-.02em}
+.ftext p{max-width:36ch;margin:0 0 22px;color:var(--ink-2,#5a4f49)}
+@media (max-width:800px){.frow,.frow.rev{grid-template-columns:1fr}.frow.rev .fcard{order:0}}
+.grid.cats .thumb{position:relative}
+.grid.cats .ov{position:absolute;left:0;right:0;bottom:0;padding:clamp(16px,2vw,24px);display:grid;gap:6px;background:linear-gradient(transparent,rgba(12,9,8,.82));opacity:0;transform:translateY(10px);transition:opacity .35s,transform .45s var(--ease)}
+.grid.cats .ov h3{color:#fff;font-size:clamp(22px,2vw,28px)}
+.grid.cats .ov .go{color:#fff}
+.grid.cats .ov .tags{color:rgba(255,255,255,.78);margin:0;font-size:13.5px}
+.grid.cats .proj:hover .ov,.grid.cats .proj:focus-visible .ov{opacity:1;transform:none}
+@media (hover:none){.grid.cats .ov{opacity:1;transform:none}}
+.about-photo{margin:0;align-self:start;justify-self:end;width:min(340px,100%)}
+.about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:18px;display:block}
+@media (max-width:800px){.about{grid-template-columns:1fr}.about-photo{justify-self:start;width:min(280px,70%)}}
+.rm-intro{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(24px,5vw,80px);align-items:start}
+.rm-intro .caps{font-weight:700;text-transform:uppercase;font-size:clamp(14px,1.2vw,16px);line-height:1.35;letter-spacing:.01em;color:var(--ink)}
+@media (max-width:800px){.rm-intro{grid-template-columns:1fr}}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,56px) clamp(16px,2.4vw,32px)}
 .proj{text-decoration:none;display:grid;gap:14px}
 .thumb{aspect-ratio:5/4;border-radius:14px;overflow:hidden;background:var(--bg-2)}
@@ -554,31 +581,15 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
 
   <section class="sec" id="work">
     <div class="sec-head"><h2 data-r>Projects</h2></div>
-    <div class="grid">
-      <a class="proj" href="#orive" data-r>
-        <div class="thumb"><img src="cover-orive.jpg" alt="Orivé cover: app home screen beside the Orivé wordmark"></div>
-        <div class="proj-meta"><h3>Orivé</h3><span class="go" aria-hidden="true">↗</span></div>
-        <p class="tags">UX Case Study · UI/UX · Product Design</p>
+    <div class="grid cats">
+      <a class="proj" href="#product-design" data-r>
+        <div class="thumb"><img src="cat-product.jpg?v=2" alt="Product Design projects" loading="lazy"><div class="ov"><div class="proj-meta"><h3>Product Design</h3><span class="go" aria-hidden="true">↗</span></div></div></div>
       </a>
-      <a class="proj" href="#crewcares" data-r style="--d:100ms">
-        <div class="thumb"><img src="cover-crewcares.jpg" alt="CrewCares cover: a phone showing a worker filing a station complaint by text"></div>
-        <div class="proj-meta"><h3>CrewCares</h3><span class="go" aria-hidden="true">↗</span></div>
-        <p class="tags">Product Design · Problem Solving</p>
+      <a class="proj" href="#interaction-design" data-r style="--d:100ms">
+        <div class="thumb"><img src="cat-interaction.jpg?v=2" alt="Interaction and Experience Design projects" loading="lazy"><div class="ov"><div class="proj-meta"><h3>Interaction &amp; Experience Design</h3><span class="go" aria-hidden="true">↗</span></div></div></div>
       </a>
-      <a class="proj" href="#cool-orbit" data-r>
-        <div class="thumb"><img src="cover-coolorbit.jpg" alt="Cool Orbit dashboard: a lavender planet beside the headline Finding the right materials to keep AI cool in orbit" loading="lazy"></div>
-        <div class="proj-meta"><h3>Cool Orbit</h3><span class="go" aria-hidden="true">↗</span></div>
-        <p class="tags">Product Design · Data Visualization · AI Agents</p>
-      </a>
-      <a class="proj" href="#ai-tarot" data-r>
-        <div class="thumb"><img src="cover-tarot.jpg" alt="AI Tarot Reader interface on a purple gradient" loading="lazy"></div>
-        <div class="proj-meta"><h3>AI Tarot Reader</h3><span class="go" aria-hidden="true">↗</span></div>
-        <p class="tags">Creative Coding · HTML, JavaScript · APIs</p>
-      </a>
-      <a class="proj" href="#before-it-makes-sense" data-r style="--d:100ms">
-        <div class="thumb"><img src="cover-bims.jpg" alt="Before It Makes Sense cover: projections on hanging fabric in a dark room" loading="lazy"></div>
-        <div class="proj-meta"><h3>Before It Makes Sense</h3><span class="go" aria-hidden="true">↗</span></div>
-        <p class="tags">Experience Design · Interaction Design</p>
+      <a class="proj" href="#creative-coding" data-r style="--d:200ms">
+        <div class="thumb"><img src="cat-coding.jpg?v=2" alt="Creative Coding projects" loading="lazy"><div class="ov"><div class="proj-meta"><h3>Creative Coding</h3><span class="go" aria-hidden="true">↗</span></div></div></div>
       </a>
     </div>
   </section>
@@ -586,10 +597,11 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
   <section class="sec" id="about">
     <div class="sec-head"><h2 data-r>About</h2><span class="label">Student · Parsons</span></div>
     <div class="about">
-      <div class="about-copy" data-r style="grid-column:1/-1;max-width:70ch">
+      <div class="about-copy" data-r style="max-width:62ch">
         <p>I am a junior pursuing a BFA in Design &amp; Technology at Parsons School of Design, with a minor in Data Visualization.</p>
         <p>I am committed to building a strong foundation in UX and digital product design, with an interest in creating intuitive, thoughtful, and user-centered experiences. My interests lie at the intersection of design, technology, and human-centered problem solving. I enjoy exploring how research, interaction, visual design, and emerging technologies can come together to simplify complex ideas and shape meaningful digital experiences.</p>
       </div>
+      <figure class="about-photo" data-r="img" style="--d:120ms"><img src="headshot.jpg" alt="Portrait of Sia Kashyap" loading="lazy"></figure>
     </div>
 
     <div class="xp-wrap" data-r>
@@ -618,14 +630,13 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
       <a href="https://www.linkedin.com/in/siaa-kashyap/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/siaaarchives_/" target="_blank" rel="noopener">Instagram</a>
     </div>
-    <a class="booth" href="https://siakashyap06.github.io/Photoboothstrip/" target="_blank" rel="noopener"><span class="label" style="color:#9C8F88">Something fun</span><b>Try my photobooth</b><span class="arr">↗</span></a>
   </section>
 </main>
 
 <!-- ================= ORIVÉ ================= -->
 <main class="view wrap" id="v-orive" data-view="orive" hidden>
   <section class="cs-top">
-    <a class="back" href="#work">← All work</a>
+    <a class="back" href="#product-design">← Product Design</a>
     <span class="label">UX case study · iOS app · Personal project</span>
     <h1 class="cs-title">Orivé</h1>
     <p class="cs-sub">Designing one calm place for body and mind, for young adults whose wellness routines fall apart when life gets busy.</p>
@@ -1027,7 +1038,7 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
 <!-- ================= CREWCARES ================= -->
 <main class="view wrap" id="v-crewcares" data-view="crewcares" hidden>
   <section class="cs-top">
-    <a class="back" href="#work">← All work</a>
+    <a class="back" href="#product-design">← Product Design</a>
     <span class="label">Product design · Hackathon · Climate Week NYC</span>
     <h1 class="cs-title">CrewCares</h1>
     <p class="cs-sub">Giving NYC subway workers a say in their own health and safety, and giving their union the data to act on it.</p>
@@ -1044,7 +1055,7 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
     </div>
   </section>
 
-  <div class="cc-hero" data-r="img"><img src="cover-crewcares.jpg" alt="CrewCares complaint flow: a worker reports dust by the express track"></div>
+  <div class="cc-hero" data-r="img"><img src="cover-crewcares.jpg?v=2" alt="CrewCares complaint flow: a worker reports dust by the express track"></div>
 
   <section class="block">
     <span class="label"><span class="num">01</span> Overview</span>
@@ -1247,7 +1258,7 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
 <!-- ================= COOL ORBIT ================= -->
 <main class="view wrap" id="v-cool-orbit" data-view="cool-orbit" hidden>
   <section class="cs-top">
-    <a class="back" href="#work">← All work</a>
+    <a class="back" href="#product-design">← Product Design</a>
     <span class="label">Product design · Full-stack · ScienceClaw Hackathon, MIT Media Lab</span>
     <h1 class="cs-title">Cool Orbit</h1>
     <p class="cs-sub">AI agents that search for better ways to keep AI chips cool in orbit, and check each other so the answer can be trusted.</p>
@@ -1412,13 +1423,13 @@ h3.sub{font-size:clamp(24px,2.6vw,32px);margin-top:18px}
     </div>
   </section>
 
-  <a class="next" href="#ai-tarot"><div><span class="label">Next project</span><h2>AI Tarot Reader</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
+  <a class="next" href="#interaction-design"><div><span class="label">Next area</span><h2>Interaction &amp; Experience Design</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
 </main>
 
 <!-- ================= AI TAROT ================= -->
 <main class="view wrap" id="v-ai-tarot" data-view="ai-tarot" hidden>
   <section class="cs-top">
-    <a class="back" href="#work">← All work</a>
+    <a class="back" href="#creative-coding">← Creative Coding</a>
     <span class="label">Creative technology · Web experiment</span>
     <h1 class="cs-title">AI Tarot Reader</h1>
     <p class="cs-sub">A small web experiment: ask a question, choose your mood and draw a card. The reading combines a card pulled from a tarot API with a message written for how you feel.</p>
@@ -1737,14 +1748,14 @@ button:hover{
     </div>
   </section>
 
-  <a class="next" href="#before-it-makes-sense"><div><span class="label">Next project</span><h2>Before It Makes Sense</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
+  <a class="next" href="#photobooth"><div><span class="label">Next project</span><h2>Photobooth</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
 </main>
 
 <!-- ================= BEFORE IT MAKES SENSE ================= -->
 <main class="view bims" id="v-before-it-makes-sense" data-view="before-it-makes-sense" hidden>
   <div class="wrap">
     <section class="cs-top">
-      <a class="back" href="#work">← All work</a>
+      <a class="back" href="#interaction-design">← Interaction &amp; Experience Design</a>
       <span class="label">Projection-mapped installation · Environments</span>
       <h1 class="cs-title">Before It Makes Sense</h1>
       <p class="cs-sub">A fragmented environment that only becomes understandable when you change how you look at it.</p>
@@ -1803,8 +1814,244 @@ button:hover{
       </div>
     </section>
 
-    <a class="next" href="#orive"><div><span class="label">Back to the start</span><h2>Orivé</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
+    <a class="next" href="#hot-or-iced"><div><span class="label">Next project</span><h2>Hot or Iced?</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
   </div>
+</main>
+
+<!-- ================= HOT OR ICED ================= -->
+<main class="view wrap" id="v-hot-or-iced" data-view="hot-or-iced" hidden>
+  <section class="cs-top">
+    <a class="back" href="#interaction-design">← Interaction &amp; Experience Design</a>
+    <span class="label">Creative technology · Motion-controlled TouchDesigner animation</span>
+    <h1 class="cs-title">Hot or Iced?</h1>
+    <p class="cs-sub">I love coffee, and I’m always stuck choosing between hot and iced. So I turned my daily dilemma into a playful interactive animation where your movement makes the call.</p>
+    <div class="facts">
+      <div><span class="label">Role</span><p>Solo project</p></div>
+      <div><span class="label">Built with</span><p>TouchDesigner · MediaPipe · Projector</p></div>
+      <div><span class="label">Discipline</span><p>Creative Technology · Interaction Design</p></div>
+      <div><span class="label">Year</span><p>2025</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">01</span> Concept</span>
+    <div class="prose" data-r>
+      <h2>My daily coffee debate, made interactive</h2>
+      <p>I’m a huge coffee person, and almost every time I order, I go back and forth: hot or iced? It’s such a small decision, but it says a lot about mood, weather and how my day is going. I wanted to take that tiny, very real moment and turn it into something people could play with.</p>
+      <p>So I built a fun, interactive TouchDesigner piece where you don’t choose with a button. You choose with your body. Using MediaPipe to track your movement, the projection shifts between a warm “hot” state and a cool “iced” state in real time, turning an everyday choice into an immersive visual moment.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">02</span> How it works</span>
+    <div class="prose wide">
+      <div class="flow" data-r><span>Camera</span><i>→</i><span>MediaPipe tracks body + hands</span><i>→</i><span>TouchDesigner maps movement</span><i>→</i><span>Type, color and motion shift live</span></div>
+      <p data-r style="max-width:66ch">MediaPipe tracks the viewer’s body and gestures, and TouchDesigner translates that movement into changes in color, texture and motion, switching between the warm “hot” state and the cool “iced” state.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">03</span> Two states</span>
+    <div class="prose wide">
+      <div data-r="img" style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(12px,2vw,24px);max-width:620px">
+        <figure style="margin:0"><img src="hot-or-iced-hot.jpg" alt="The hot state: rows of hot? in orange and white type projected on a dark wall" loading="lazy" style="width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:10px;display:block"><figcaption class="cap">Hot</figcaption></figure>
+        <span aria-hidden="true" style="font-family:var(--serif);font-style:italic;font-size:clamp(28px,3.4vw,44px);line-height:1;margin-bottom:22px">or</span>
+        <figure style="margin:0"><img src="hot-or-iced-iced.jpg" alt="The iced state: rows of iced? in pale type projected on a dark wall" loading="lazy" style="width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:10px;display:block"><figcaption class="cap">Iced</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label"><span class="num">04</span> In the space</span>
+    <div class="prose wide">
+      <div class="media" style="background:#000;display:grid;place-items:center;border-radius:10px" data-r="img"><video src="hot-or-iced-demo.mp4" poster="hot-or-iced-poster.jpg" controls playsinline muted loop preload="metadata" style="max-height:86vh;max-width:100%" aria-label="Demo recorded in the projection space, 14 seconds"></video></div>
+    </div>
+  </section>
+
+
+  <a class="next" href="#self-soothing-device"><div><span class="label">Next project</span><h2>Self-Soothing Device</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
+</main>
+
+<!-- ================= PHOTOBOOTH ================= -->
+<main class="view wrap" id="v-photobooth" data-view="photobooth" hidden>
+  <section class="cs-top">
+    <a class="back" href="#creative-coding">← Creative Coding</a>
+    <span class="label">Creative coding · p5.js</span>
+    <h1 class="cs-title">Photobooth</h1>
+    <p class="cs-sub">A New York-style photo booth in the browser. Press the red button, strike four poses, and your black-and-white strip prints out of the slot.</p>
+    <div class="facts">
+      <div><span class="label">Role</span><p>Design &amp; code</p></div>
+      <div><span class="label">Built with</span><p>p5.js · Webcam · HTML, CSS, JavaScript</p></div>
+      <div><span class="label">Code</span><p><a href="https://github.com/Siakashyap06/Photoboothstrip" target="_blank" rel="noopener">GitHub ↗</a></p></div>
+      <a class="btn cta" href="https://siakashyap06.github.io/Photoboothstrip/" target="_blank" rel="noopener">Open the photobooth <span class="arr">↗</span></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label">Try it here</span>
+    <div class="prose wide">
+      <div class="embed" data-r="img" style="background:#111;border-color:#2a2a2a">
+        <div class="embed-bar" style="border-color:#2a2a2a"><span class="label" style="color:#9C8F88">siakashyap06.github.io/Photoboothstrip</span><a class="label" href="https://siakashyap06.github.io/Photoboothstrip/" target="_blank" rel="noopener" style="color:#E9E0D8">Open full screen ↗</a></div>
+        <iframe src="https://siakashyap06.github.io/Photoboothstrip/" title="Photobooth live demo" loading="lazy" allow="camera; microphone" style="display:block;width:100%;height:min(78vh,820px);border:0;background:#fff"></iframe>
+      </div>
+      <p class="cap">Allow camera access to use the booth. Nothing is uploaded; photos stay in your browser.</p>
+    </div>
+  </section>
+
+  <a class="next" href="#type-scraps"><div><span class="label">Next project</span><h2>Type Scraps</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
+</main>
+
+<!-- ================= TYPE SCRAPS ================= -->
+<main class="view wrap" id="v-type-scraps" data-view="type-scraps" hidden>
+  <section class="cs-top">
+    <a class="back" href="#creative-coding">← Creative Coding</a>
+    <span class="label">Creative coding · React</span>
+    <h1 class="cs-title">Type Scraps</h1>
+    <p class="cs-sub">An interactive type archive and digital scrapbook. Drag cut-out letters, phrases and collage scraps onto a poster, rearrange and layer them, then save your poster as a PNG.</p>
+    <div class="facts">
+      <div><span class="label">Role</span><p>Design &amp; code</p></div>
+      <div><span class="label">Built with</span><p>React · Vite · JavaScript</p></div>
+      <div><span class="label">Course</span><p>Core Lab, Parsons</p></div>
+      <a class="btn cta" href="https://typescraps.vercel.app/" target="_blank" rel="noopener">Make a poster <span class="arr">↗</span></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label">Try it here</span>
+    <div class="prose wide">
+      <div class="embed" data-r="img" style="background:#111;border-color:#2a2a2a">
+        <div class="embed-bar" style="border-color:#2a2a2a"><span class="label" style="color:#9C8F88">typescraps.vercel.app</span><a class="label" href="https://typescraps.vercel.app/" target="_blank" rel="noopener" style="color:#E9E0D8">Open full screen ↗</a></div>
+        <iframe src="https://typescraps.vercel.app/" title="Type Scraps live demo" loading="lazy" style="display:block;width:100%;height:min(80vh,860px);border:0;background:#fff"></iframe>
+      </div>
+      <p class="cap">Best on a laptop or desktop.</p>
+    </div>
+  </section>
+
+  <a class="next" href="#work"><div><span class="label">Back to</span><h2>All work</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
+</main>
+
+<!-- ================= CATEGORY: product-design ================= -->
+<main class="view wrap catv" id="v-product-design" data-view="product-design" hidden>
+  <section class="cs-top">
+    <a class="back" href="#work">← All work</a>
+    <span class="label">Area · 01</span>
+    <h1 class="cs-title">Product Design</h1>
+    <p class="cs-sub">Apps and tools built around real people, from research to tested interfaces.</p>
+  </section>
+  <div class="frows">
+    <a class="frow" href="#orive">
+      <div class="fcard" data-flip="y"><img src="cover-orive.jpg" alt="Orivé cover" loading="lazy"></div>
+      <div class="ftext"><span class="label"><span class="num">01</span> UX Case Study · UI/UX · Product Design</span><h2>Orivé</h2><p>A Gen Z wellness app, from 10 user interviews to a tested iOS design.</p><span class="btn ghost">View project <span class="arr">↗</span></span></div>
+    </a>
+    <a class="frow rev" href="#crewcares">
+      <div class="fcard" data-flip="y"><img src="cover-crewcares.jpg?v=2" alt="CrewCares cover" loading="lazy"></div>
+      <div class="ftext"><span class="label"><span class="num">02</span> Product Design · Problem Solving</span><h2>CrewCares</h2><p>A two-sided health platform for NYC transit workers and their union reps.</p><span class="btn ghost">View project <span class="arr">↗</span></span></div>
+    </a>
+    <a class="frow" href="#cool-orbit">
+      <div class="fcard" data-flip="y"><img src="cover-coolorbit.jpg" alt="Cool Orbit cover" loading="lazy"></div>
+      <div class="ftext"><span class="label"><span class="num">03</span> Product Design · Data Visualization · AI Agents</span><h2>Cool Orbit</h2><p>A dashboard that helps people judge which AI results to trust. Built at MIT.</p><span class="btn ghost">View project <span class="arr">↗</span></span></div>
+    </a>
+  </div>
+  <a class="next" href="#interaction-design"><div><span class="label">Next area</span><h2>Interaction &amp; Experience Design</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
+</main>
+
+<!-- ================= CATEGORY: interaction-design ================= -->
+<main class="view wrap catv" id="v-interaction-design" data-view="interaction-design" hidden>
+  <section class="cs-top">
+    <a class="back" href="#work">← All work</a>
+    <span class="label">Area · 02</span>
+    <h1 class="cs-title">Interaction &amp; Experience Design</h1>
+    <p class="cs-sub">Rooms, projections and devices that respond to the body, sound and movement.</p>
+  </section>
+  <div class="frows">
+    <a class="frow" href="#before-it-makes-sense">
+      <div class="fcard" data-flip="flip"><img src="cover-bims.jpg" alt="Before It Makes Sense cover" loading="lazy"></div>
+      <div class="ftext"><span class="label"><span class="num">01</span> Experience Design · Projection Mapping</span><h2>Before It Makes Sense</h2><p>A projection-mapped room that only makes sense once you move through it.</p><span class="btn ghost">View project <span class="arr">↗</span></span></div>
+    </a>
+    <a class="frow rev" href="#hot-or-iced">
+      <div class="fcard" data-flip="flip"><img src="cover-hoticed.jpg?v=2" alt="Hot or Iced? cover" loading="lazy"></div>
+      <div class="ftext"><span class="label"><span class="num">02</span> Creative Technology · TouchDesigner · MediaPipe</span><h2>Hot or Iced?</h2><p>My daily coffee debate, turned into a projection you control with your body.</p><span class="btn ghost">View project <span class="arr">↗</span></span></div>
+    </a>
+    <a class="frow" href="#self-soothing-device">
+      <div class="fcard" data-flip="flip"><img src="cover-ssd.jpg" alt="Self-Soothing Device cover" loading="lazy"></div>
+      <div class="ftext"><span class="label"><span class="num">03</span> Physical Computing · Arduino · Interaction Design</span><h2>Self-Soothing Device</h2><p>A small device that hears when a room gets too loud and guides you to breathe.</p><span class="btn ghost">View project <span class="arr">↗</span></span></div>
+    </a>
+  </div>
+  <a class="next" href="#creative-coding"><div><span class="label">Next area</span><h2>Creative Coding</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
+</main>
+
+<!-- ================= CATEGORY: creative-coding ================= -->
+<main class="view wrap catv" id="v-creative-coding" data-view="creative-coding" hidden>
+  <section class="cs-top">
+    <a class="back" href="#work">← All work</a>
+    <span class="label">Area · 03</span>
+    <h1 class="cs-title">Creative Coding</h1>
+    <p class="cs-sub">Playful experiments where code becomes a creative tool. Each one runs live, so go ahead and try it.</p>
+  </section>
+  <div class="frows">
+    <a class="frow" href="#ai-tarot">
+      <div class="fcard" data-flip="z"><img src="cover-tarot.jpg" alt="AI Tarot Reader cover" loading="lazy"></div>
+      <div class="ftext"><span class="label"><span class="num">01</span> Creative Coding · HTML, JavaScript · APIs</span><h2>AI Tarot Reader</h2><p>Ask a question, pick your mood, draw a card. Try it right on the page.</p><span class="btn ghost">View project <span class="arr">↗</span></span></div>
+    </a>
+    <a class="frow rev" href="#photobooth">
+      <div class="fcard" data-flip="z"><img src="cover-photobooth.jpg" alt="Photobooth cover" loading="lazy"></div>
+      <div class="ftext"><span class="label"><span class="num">02</span> Creative Coding · p5.js · Webcam</span><h2>Photobooth</h2><p>A New York-style photo booth in your browser. Four poses, one strip.</p><span class="btn ghost">View project <span class="arr">↗</span></span></div>
+    </a>
+    <a class="frow" href="#type-scraps">
+      <div class="fcard" data-flip="z"><img src="cover-typescraps.jpg" alt="Type Scraps cover" loading="lazy"></div>
+      <div class="ftext"><span class="label"><span class="num">03</span> Creative Coding · React · Vite</span><h2>Type Scraps</h2><p>A cut-and-paste type archive for making collage posters.</p><span class="btn ghost">View project <span class="arr">↗</span></span></div>
+    </a>
+  </div>
+  <a class="next" href="#work"><div><span class="label">Back to</span><h2>All work</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
+</main>
+
+<!-- ================= SELF-SOOTHING DEVICE ================= -->
+<main class="view wrap" id="v-self-soothing-device" data-view="self-soothing-device" hidden>
+  <section class="cs-top">
+    <a class="back" href="#interaction-design">← Interaction &amp; Experience Design</a>
+    <span class="label">Physical computing · Arduino</span>
+    <h1 class="cs-title">Self-Soothing Device</h1>
+    <div class="facts">
+      <div><span class="label">Role</span><p>Solo project</p></div>
+      <div><span class="label">Built with</span><p>Arduino · Sound sensor · LCD · LEDs</p></div>
+      <div><span class="label">Discipline</span><p>Interaction Design · Physical Computing</p></div>
+      <div><span class="label">Year</span><p>2025</p></div>
+    </div>
+  </section>
+
+  <section class="block" style="display:block">
+    <div class="rm-intro">
+      <div class="prose" data-r>
+        <p>A prototype of a self-soothing device designed to support moments of overwhelm through responsive interaction. The device uses a sound sensor to detect high noise levels and automatically triggers a guided breathing sequence, using LED light as inhale and exhale cues to calm the user down.</p>
+        <p>Built using Arduino and basic physical computing components, this project involved multiple iterations and hands-on troubleshooting. Early versions faced issues with soldering connections, unstable readings from the sensor and inconsistent LED behavior. Through testing and rebuilding circuits, the prototype became more stable and responsive.</p>
+        <p>The focus is on minimal interaction: no buttons, just an automatic system that activates when needed, exploring how environmental input can translate into calming feedback.</p>
+      </div>
+      <p class="caps" data-r style="--d:120ms">Prototype of a self-soothing device that detects noise levels and guides breathing through light-based feedback, developed through iterative testing and circuit troubleshooting.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label">Prototype</span>
+    <div class="prose wide">
+      <div class="media" data-r="img"><img src="ssd-hero.jpg" alt="The finished device: a cardboard stand with an LCD, LEDs, a smiling sun and a heart" style="border-radius:14px"></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label">Prototype video</span>
+    <div class="prose wide">
+      <div class="media" style="background:#000;display:grid;place-items:center;border-radius:14px" data-r="img"><video src="ssd-prototype.mp4?v=2" poster="ssd-prototype-poster.jpg?v=2" controls playsinline preload="metadata" style="max-height:80vh;max-width:100%" aria-label="Prototype video of the self-soothing device"></video></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="label">Ideation</span>
+    <div class="prose wide">
+      <div class="media" data-r="img"><img src="ssd-ideation.jpg" alt="Ideation sketch: forms, components and a four-step storyboard of the interaction" loading="lazy" style="border-radius:14px"></div>
+    </div>
+  </section>
+
+  <a class="next" href="#creative-coding"><div><span class="label">Next area</span><h2>Creative Coding</h2></div><span class="btn ghost">View <span class="arr">↗</span></span></a>
 </main>
 
 <footer class="foot"><span>© 2026 Sia Kashyap</span></footer>
@@ -1855,7 +2102,7 @@ button:hover{
     var anchor=document.getElementById('deckAnchor'); if(!anchor) return;
     var cards=[].slice.call(document.querySelectorAll('#work .proj'));
     var thumbs=cards.map(function(c){return c.querySelector('.thumb');});
-    var metas=cards.map(function(c){return [c.querySelector('.proj-meta'),c.querySelector('.tags')];});
+    var metas=cards.map(function(c){return [c.querySelector('.proj-meta'),c.querySelector('.tags')].filter(Boolean);});
     var mq=window.matchMedia('(min-width: 900px)');
     var rot=[-2,6,-7,11], ox=[0,26,-22,40], oy=[0,-14,12,-26], z=[4,3,2,1];
     var geo=null, ticking=false;
@@ -1887,6 +2134,25 @@ button:hover{
     window.addEventListener('hashchange',function(){geo=null;setTimeout(req,30);});
     window.addEventListener('load',function(){geo=null;req();});
     req();
+  })();
+
+  // category pages: cards flip and rotate as they move through the viewport
+  (function(){
+    if(reduce) return;
+    var tick=false;
+    function frame(){ tick=false;
+      var vh=innerHeight;
+      document.querySelectorAll('.catv:not([hidden]) .fcard').forEach(function(c){
+        var r=c.getBoundingClientRect(), m=(r.top+r.height/2-vh/2)/(vh*0.75);
+        m=Math.max(-1,Math.min(1,m)); var a=Math.abs(m), mode=c.dataset.flip, rev=c.closest('.rev')?-1:1, t;
+        if(mode==='flip') t='perspective(1200px) rotateY('+(m*rev*-55).toFixed(2)+'deg) scale('+(1-a*.1).toFixed(3)+')';
+        else if(mode==='z') t='perspective(1200px) rotate('+(m*rev*9).toFixed(2)+'deg) translateY('+(m*60).toFixed(1)+'px) scale('+(1-a*.08).toFixed(3)+')';
+        else t='perspective(1200px) rotateX('+(m*28).toFixed(2)+'deg) rotateY('+(m*rev*-14).toFixed(2)+'deg) scale('+(1-a*.08).toFixed(3)+')';
+        c.style.transform=t; c.style.opacity=(1-Math.max(0,a-.55)*1.6).toFixed(3);
+      });
+    }
+    function req(){ if(!tick){tick=true;requestAnimationFrame(frame);} }
+    addEventListener('scroll',req,{passive:true}); addEventListener('resize',req); addEventListener('hashchange',function(){setTimeout(req,40);}); req();
   })();
   var draw=document.getElementById('trDraw'),out=document.getElementById('trResult');
   var readings={anxious:"You may be overthinking the unknown right now. Trust that clarity will come.",hopeful:"This card reflects growth, softness, and possibility entering your life.",stuck:"A shift in perspective may help you move forward.",excited:"Follow your excitement, but remember to stay grounded.",confused:"Not every answer appears immediately. Sit with uncertainty."};
