@@ -99,6 +99,14 @@ ul{margin:0}
 .rm-intro{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(24px,5vw,80px);align-items:start}
 .rm-intro .caps{font-weight:700;text-transform:uppercase;font-size:clamp(14px,1.2vw,16px);line-height:1.35;letter-spacing:.01em;color:var(--ink)}
 @media (max-width:800px){.rm-intro{grid-template-columns:1fr}}
+.about-photo{overflow:hidden;border-radius:18px}
+.js-motion .about-photo{clip-path:inset(12% 0 12% 0 round 18px);transition:clip-path 1.4s var(--ease)}
+.js-motion .about-photo.in{clip-path:inset(0 0 0 0 round 18px)}
+.about-photo img{will-change:transform;transform:scale(1.12)}
+.js-motion .xp li{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.js-motion .xp li.in{opacity:1;transform:none}
+.js-motion .skills > div{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.js-motion .skills > div.in{opacity:1;transform:none}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,56px) clamp(16px,2.4vw,32px)}
 .proj{text-decoration:none;display:grid;gap:14px}
 .thumb{aspect-ratio:5/4;border-radius:14px;overflow:hidden;background:var(--bg-2)}
@@ -2153,6 +2161,25 @@ button:hover{
     }
     function req(){ if(!tick){tick=true;requestAnimationFrame(frame);} }
     addEventListener('scroll',req,{passive:true}); addEventListener('resize',req); addEventListener('hashchange',function(){setTimeout(req,40);}); req();
+  })();
+
+  // about: gentle parallax on the portrait + staggered experience and skills
+  (function(){
+    var ph=document.querySelector('.about-photo'), img=ph&&ph.querySelector('img');
+    var lio=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');lio.unobserve(e.target);}});},{threshold:0.15}):null;
+    document.querySelectorAll('.xp li, .skills > div').forEach(function(el,i){
+      var idx=[].indexOf.call(el.parentElement.children,el); el.style.transitionDelay=(idx*110)+'ms';
+      lio?lio.observe(el):el.classList.add('in');
+    });
+    if(!img||reduce) { if(img) img.style.transform='none'; return; }
+    var tick=false;
+    function frame(){ tick=false; var r=ph.getBoundingClientRect(), vh=innerHeight;
+      if(r.bottom<0||r.top>vh) return;
+      var m=(r.top+r.height/2-vh/2)/vh; // -1..1
+      img.style.transform='translateY('+(m*-40).toFixed(1)+'px) scale('+(1.12-Math.max(0,1-Math.abs(m)*1.4)*0.05).toFixed(3)+')';
+    }
+    function req(){ if(!tick){tick=true;requestAnimationFrame(frame);} }
+    addEventListener('scroll',req,{passive:true}); addEventListener('resize',req); req();
   })();
   var draw=document.getElementById('trDraw'),out=document.getElementById('trResult');
   var readings={anxious:"You may be overthinking the unknown right now. Trust that clarity will come.",hopeful:"This card reflects growth, softness, and possibility entering your life.",stuck:"A shift in perspective may help you move forward.",excited:"Follow your excitement, but remember to stay grounded.",confused:"Not every answer appears immediately. Sit with uncertainty."};
